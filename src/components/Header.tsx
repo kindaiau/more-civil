@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/morecivil-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +26,7 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <Link to="/" className="brand">
-            <img src={logo} alt="MORECIVIL" />
+            <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="MORECIVIL" className="h-12 w-auto" />
           </Link>
           
           <button 
