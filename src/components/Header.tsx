@@ -59,9 +59,9 @@ const Header = () => {
           top: 0;
           z-index: 20;
           backdrop-filter: saturate(180%) blur(8px);
-          background: rgba(11, 31, 42, 0.86);
-          color: white;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.95);
+          color: hsl(var(--foreground));
+          border-bottom: 1px solid hsl(var(--border));
         }
         
         .nav {
@@ -90,26 +90,27 @@ const Header = () => {
         }
         
         .menu-link {
-          color: white;
+          color: hsl(var(--foreground));
           padding: 0.5rem 0.75rem;
           border-radius: 10px;
           text-decoration: none;
         }
         
         .menu-link[aria-current="page"] {
-          background: rgba(255, 255, 255, 0.12);
+          background: hsl(var(--primary));
+          color: white;
         }
         
         .menu-link:hover {
-          background: rgba(255, 255, 255, 0.08);
+          background: hsl(var(--muted));
           text-decoration: none;
         }
         
         .menu-btn {
           display: none;
           background: transparent;
-          color: white;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          color: hsl(var(--foreground));
+          border: 1px solid hsl(var(--border));
           padding: 0.45rem 0.7rem;
           border-radius: 10px;
           cursor: pointer;
@@ -127,9 +128,9 @@ const Header = () => {
             left: 0;
             right: 0;
             top: 100%;
-            background: rgba(11, 31, 42, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             padding: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid hsl(var(--border));
           }
           
           .menu.open {
