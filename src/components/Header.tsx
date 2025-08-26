@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <Link to="/" className="brand">
-            <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="MORECIVIL" className="h-12 w-auto" />
+            <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="MORECIVIL" className="h-36 w-auto" />
           </Link>
           
           <button 
