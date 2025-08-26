@@ -148,7 +148,7 @@ All colors MUST be HSL.
     text-decoration: underline;
   }
 }
-  /* === Motion Utilities for More Civil === */
+/* === Motion Utilities === */
 .reveal {
   opacity: 0;
   transform: translateY(24px);

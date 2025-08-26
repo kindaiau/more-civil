@@ -1,145 +1,60 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from 'react';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Water", href: "/water" },
-    { name: "Civil", href: "/civil" },
-    { name: "Projects", href: "/projects" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const isCurrentPage = (href: string) => {
-    if (href === "/" && location.pathname === "/") return true;
-    if (href !== "/" && location.pathname.startsWith(href)) return true;
-    return false;
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="header">
-      <div className="container">
-        <nav className="nav">
-          <Link to="/" className="brand">
-            <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="MORECIVIL" className="h-64 w-auto" />
-          </Link>
-          
-          <button 
-            className="menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-          
-          <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="menu-link"
-                aria-current={isCurrentPage(item.href) ? "page" : undefined}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all ${
+        scrolled ? 'bg-[#0B1F2A]/95 shadow-lg' : 'bg-[#0B1F2A]/85'
+      } backdrop-blur-sm border-b border-white/10`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <a href="#home" className="flex items-center gap-3">
+          <img
+            src="/MORECIVILFINALLOGOFORWEB.svg"
+            alt="More Civil"
+            className="h-10 w-auto"
+          />
+          <span className="text-white font-extrabold tracking-wide">
+            More Civil
+          </span>
+        </a>
+
+        <nav className="hidden md:flex items-center gap-6 text-white font-medium">
+          <a href="#services" className="hover:text-[#00B4D8] transition-colors">Services</a>
+          <a href="#projects" className="hover:text-[#00B4D8] transition-colors">Projects</a>
+          <a href="#faq" className="hover:text-[#00B4D8] transition-colors">FAQ</a>
+          <a href="#quote" className="hover:text-[#00B4D8] transition-colors">Quote</a>
+          <a href="#contact" className="hover:text-[#00B4D8] transition-colors">Contact</a>
         </nav>
+
+        <button
+          onClick={() => setOpen(v => !v)}
+          className="md:hidden text-white px-3 py-2 border border-white/30 rounded-lg"
+          aria-label="Toggle menu"
+        >
+          Menu
+        </button>
       </div>
-      
-      <style>{`
-        .header {
-          position: sticky;
-          top: 0;
-          z-index: 20;
-          backdrop-filter: saturate(180%) blur(8px);
-          background: rgba(255, 255, 255, 0.95);
-          color: hsl(var(--foreground));
-          border-bottom: 1px solid hsl(var(--border));
-        }
-        
-        .nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0.8rem 0;
-        }
-        
-        .brand {
-          display: flex;
-          gap: 0.75rem;
-          align-items: center;
-        }
-        
-        .brand img {
-          height: 48px;
-          width: auto;
-          display: block;
-        }
-        
-        .menu {
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-        }
-        
-        .menu-link {
-          color: hsl(var(--foreground));
-          padding: 0.5rem 0.75rem;
-          border-radius: 10px;
-          text-decoration: none;
-        }
-        
-        .menu-link[aria-current="page"] {
-          background: hsl(var(--primary));
-          color: white;
-        }
-        
-        .menu-link:hover {
-          background: hsl(var(--muted));
-          text-decoration: none;
-        }
-        
-        .menu-btn {
-          display: none;
-          background: transparent;
-          color: hsl(var(--foreground));
-          border: 1px solid hsl(var(--border));
-          padding: 0.45rem 0.7rem;
-          border-radius: 10px;
-          cursor: pointer;
-        }
-        
-        @media (max-width: 980px) {
-          .menu-btn {
-            display: block;
-          }
-          
-          .menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            padding: 1rem;
-            border-bottom: 1px solid hsl(var(--border));
-          }
-          
-          .menu.open {
-            display: flex;
-          }
-        }
-      `}</style>
+
+      {/* mobile menu */}
+      {open && (
+        <div className="md:hidden px-6 pb-4 text-white space-y-2 bg-[#0B1F2A]">
+          <a onClick={()=>setOpen(false)} href="#services" className="block py-2 hover:text-[#00B4D8]">Services</a>
+          <a onClick={()=>setOpen(false)} href="#projects" className="block py-2 hover:text-[#00B4D8]">Projects</a>
+          <a onClick={()=>setOpen(false)} href="#faq" className="block py-2 hover:text-[#00B4D8]">FAQ</a>
+          <a onClick={()=>setOpen(false)} href="#quote" className="block py-2 hover:text-[#00B4D8]">Quote</a>
+          <a onClick={()=>setOpen(false)} href="#contact" className="block py-2 hover:text-[#00B4D8]">Contact</a>
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}
