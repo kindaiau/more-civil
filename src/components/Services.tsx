@@ -8,7 +8,7 @@ const Card = ({badge, title, children}:{badge:string; title:string; children:Rea
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 bg-slate-50">
+    <section id="services" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="reveal font-extrabold text-3xl mb-8 text-center" style={{fontFamily:'Montserrat'}}>What we do</h2>
         <div className="grid md:grid-cols-3 gap-6">

@@ -16,7 +16,7 @@ function QA({q, a}:{q:string; a:string}) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-16 bg-slate-50">
+    <section id="faq" className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="reveal font-extrabold text-3xl mb-8 text-center" style={{fontFamily:'Montserrat'}}>FAQs</h2>
         <QA q="Do you deliver potable water?" a="Yes. We supply potable and non-potable water and can advise the best option for your job." />
