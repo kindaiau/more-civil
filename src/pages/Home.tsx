@@ -1,6 +1,4 @@
 import Layout from "@/components/Layout";
-import waterTruck from "@/assets/water-truck.png";
-import accreditations from "@/assets/accreditations.png";
 
 const Home = () => {
   return (
@@ -32,7 +30,7 @@ const Home = () => {
             </div>
             
             <div className="media">
-              <img src={waterTruck} alt="MORECIVIL water delivery truck" />
+              <img src="/water-truck.png" alt="MORECIVIL water delivery truck" className="max-w-full h-auto reveal tilt float" />
             </div>
           </div>
         </div>
@@ -167,7 +165,7 @@ const Home = () => {
         <div className="container text-center">
           <h2 className="mb-8">Trusted & Accredited</h2>
           <img 
-            src={accreditations} 
+            src="/accreditations.png" 
             alt="MORECIVIL accreditations - South Australia, AWA, Department for Environment and Water" 
             className="mx-auto max-w-full h-auto opacity-80"
           />

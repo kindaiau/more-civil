@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import waterTruck from "@/assets/water-truck.png";
 
 const Water = () => {
   return (
@@ -26,7 +25,7 @@ const Water = () => {
             </div>
             
             <div className="media">
-              <img src={waterTruck} alt="MORECIVIL water delivery truck" />
+              <img src="/water-truck.png" alt="MORECIVIL water delivery truck" className="max-w-full h-auto reveal tilt float" />
             </div>
           </div>
         </div>
