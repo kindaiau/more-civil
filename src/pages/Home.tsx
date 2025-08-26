@@ -8,7 +8,7 @@ const Home = () => {
         <div className="container">
           <div className="hero-inner">
             <div>
-              <h1>Professional Water & Civil Engineering Solutions</h1>
+              <h1>Professional Water & Civil Solutions</h1>
               <p className="text-lg mb-6 opacity-90">
                 Reliable water delivery, civil construction, and excavation services 
                 across South Australia. Licensed, certified, and trusted by industry leaders.
