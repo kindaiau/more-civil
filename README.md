@@ -60,6 +60,36 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## GitHub Workflows
+
+This project includes GitHub Actions workflows for CI/CD:
+
+### CI Workflow (`.github/workflows/ci.yml`)
+- Runs on push and pull requests to `main` and `develop` branches
+- Installs dependencies, runs linting, and builds the project
+- Requires the following secrets to be configured in your GitHub repository:
+  - `VITE_SUPABASE_PROJECT_ID`
+  - `VITE_SUPABASE_PUBLISHABLE_KEY`
+  - `VITE_SUPABASE_URL`
+  - `OPENAI_API_KEY` (for AI-powered features)
+
+### Deploy Workflow (`.github/workflows/deploy.yml`)
+- Runs on push to `main` branch
+- Builds the project with production environment variables
+- Ready for deployment configuration
+
+### Setting up GitHub Secrets
+
+To configure the required secrets:
+
+1. Navigate to your GitHub repository
+2. Go to Settings > Secrets and variables > Actions
+3. Add the following repository secrets:
+   - `VITE_SUPABASE_PROJECT_ID`: Your Supabase project ID
+   - `VITE_SUPABASE_PUBLISHABLE_KEY`: Your Supabase publishable key
+   - `VITE_SUPABASE_URL`: Your Supabase URL
+   - `OPENAI_API_KEY`: Your OpenAI API key for AI features
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/99ce33f8-8800-4ec2-8b63-49c8b3732976) and click on Share -> Publish.
