@@ -14,6 +14,9 @@ All colors MUST be HSL.
     --aqua: 193 100% 42%;       /* #00B4D8 */
     --black: 0 0% 4%;           /* #0A0A0A */
     --white: 0 0% 100%;         /* #FFFFFF */
+    --blue-dark: #0F4C81;
+    --blue-light: #7CC4FF;
+    --coal: var(--black);
     
     /* Design System Colors */
     --background: 0 0% 100%;
@@ -151,12 +154,17 @@ All colors MUST be HSL.
 /* === Motion Utilities === */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateY(12px);
 }
-.reveal.in {
-  opacity: 1;
-  transform: none;
+body.ready .reveal {
+  animation: fadeUp .50s ease forwards;
+  animation-delay: var(--d, .0s);
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .float {
@@ -173,6 +181,114 @@ All colors MUST be HSL.
   transform-style: preserve-3d;
   will-change: transform;
   transition: transform .15s ease;
+}
+
+/* === Button Styles === */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(16,112,202,.18);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.btn--primary, .btn:not(.btn--ghost) {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+  color: #07121c;
+}
+
+.btn--primary:hover, .btn:not(.btn--ghost):hover {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--blue-dark);
+  border-color: rgba(16,112,202,.35);
+}
+
+/* === Community Card === */
+.community-card {
+  background: #ffffff;
+  color: var(--coal);
+  border: 1px solid #E5E7EB;
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.08), 0 8px 12px rgba(16,112,202,.06);
+}
+
+.community-card .pill {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+  color: #05253f;
+  border-radius: 999px;
+}
+
+/* === Header Styles === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  color: var(--coal);
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav a {
+  margin-left: 20px;
+  color: var(--coal);
+  opacity: .8;
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+header .brand img,
+.header-brand-img {
+  height: 80px;
+}
+
+/* === Footer Styles === */
+.footer-logos {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0 8px;
+}
+
+.footer-logos img {
+  height: 96px;
+  filter: none;
+  opacity: .95;
+}
+
+.footer-logos .brandmark {
+  height: 108px;
+}
+
+@media (max-width: 600px) {
+  .footer-logos img {
+    height: 72px;
+  }
+  .footer-logos .brandmark {
+    height: 84px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

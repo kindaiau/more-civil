@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Coverage from "@/components/Coverage";
 import Gallery from "@/components/Gallery";
 import FAQ from "@/components/FAQ";
 import Quote from "@/components/Quote";
@@ -19,6 +20,7 @@ const Home = () => {
       <Header />
       <Hero />
       <Services />
+      <Coverage />
       <Gallery />
       <FAQ />
       <Quote />
@@ -26,7 +28,7 @@ const Home = () => {
       
       {/* Floating CTA */}
       <button 
-        className="fixed right-6 bottom-6 z-50 bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-4 py-3 rounded-xl shadow-lg hover:bg-[#00A3C4] transition-colors"
+        className="btn btn--primary fixed right-6 bottom-6 z-50 shadow-lg"
         onClick={() => document.querySelector('#quote')?.scrollIntoView({behavior:'smooth'})}
       >
         Request a Quote

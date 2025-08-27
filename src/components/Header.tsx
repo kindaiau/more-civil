@@ -11,24 +11,20 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all ${
-        scrolled ? 'bg-[#0B1F2A]/95 shadow-lg' : 'bg-[#0B1F2A]/85'
-      } backdrop-blur-sm border-b border-white/10`}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        <a href="#home" className="flex items-center gap-3">
+    <header className="site-header">
+      <div className="site-header wrap max-w-7xl mx-auto px-6">
+        <a href="#home" className="flex items-center gap-3 brand">
           <img
             src="/MORECIVILFINALLOGOFORWEB.svg"
             alt="More Civil"
-            className="h-10 w-auto"
+            className="header-brand-img"
           />
-          <span className="text-white font-extrabold tracking-wide">
+          <span className="font-extrabold tracking-wide" style={{color: 'var(--coal)'}}>
             More Civil
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-6 text-white font-medium">
+        <nav className="nav hidden md:flex items-center font-medium">
           <a href="#services" className="hover:text-[#00B4D8] transition-colors">Services</a>
           <a href="#projects" className="hover:text-[#00B4D8] transition-colors">Projects</a>
           <a href="#faq" className="hover:text-[#00B4D8] transition-colors">FAQ</a>
@@ -38,7 +34,8 @@ export default function Header() {
 
         <button
           onClick={() => setOpen(v => !v)}
-          className="md:hidden text-white px-3 py-2 border border-white/30 rounded-lg"
+          className="md:hidden px-3 py-2 border border-gray-300 rounded-lg"
+          style={{color: 'var(--coal)'}}
           aria-label="Toggle menu"
         >
           Menu
@@ -47,7 +44,7 @@ export default function Header() {
 
       {/* mobile menu */}
       {open && (
-        <div className="md:hidden px-6 pb-4 text-white space-y-2 bg-[#0B1F2A]">
+        <div className="md:hidden px-6 pb-4 space-y-2 bg-white border-t border-gray-200" style={{color: 'var(--coal)'}}>
           <a onClick={()=>setOpen(false)} href="#services" className="block py-2 hover:text-[#00B4D8]">Services</a>
           <a onClick={()=>setOpen(false)} href="#projects" className="block py-2 hover:text-[#00B4D8]">Projects</a>
           <a onClick={()=>setOpen(false)} href="#faq" className="block py-2 hover:text-[#00B4D8]">FAQ</a>
