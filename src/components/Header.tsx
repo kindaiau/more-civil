@@ -22,7 +22,7 @@ export default function Header() {
           <a href="#contact" className="hover:text-[#00B4D8] transition-colors">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden text-black p-2 border-8 border-black rounded-lg shadow-sm aspect-square flex items-center justify-center" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden text-black p-2 border-8 border-[#00B4D8] rounded-lg shadow-sm aspect-square flex items-center justify-center" aria-label="Toggle menu">
           Menu
         </button>
       </div>
