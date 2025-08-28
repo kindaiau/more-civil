@@ -110,12 +110,13 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
   }
 
@@ -126,17 +127,17 @@ All colors MUST be HSL.
 
   h1 {
     font-weight: 800;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-size: clamp(2.48rem, 5.6vw, 3.83rem);
   }
 
   h2 {
     font-weight: 800;
-    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    font-size: clamp(1.8rem, 3.6vw, 2.48rem);
   }
 
   h3 {
     font-weight: 700;
-    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    font-size: clamp(1.35rem, 2.48vw, 1.58rem);
   }
 
   a {
