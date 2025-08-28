@@ -7,14 +7,14 @@ export default function Header() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  return <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-white/95 shadow-lg' : 'bg-white/90'} backdrop-blur-sm border-b border-gray-200`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        <a href="#home" className="flex items-center gap-3">
-          <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="More Civil" className="h-30 w-auto -ml-14" />
+  return <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-[#0B1F2A]/95 shadow-lg' : 'bg-[#0B1F2A]/85'} backdrop-blur-sm border-b border-white/10`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-[70px] bg-neutral-50 rounded-none">
+        <a href="#home" className="flex items-center gap-3 my-0 py-0 px-0">
+          <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="More Civil" className="h-10 w-auto" />
           
         </a>
 
-        <nav className="hidden md:flex items-center gap-6 text-gray-900 font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-white font-medium">
           <a href="#services" className="hover:text-[#00B4D8] transition-colors">Services</a>
           <a href="#projects" className="hover:text-[#00B4D8] transition-colors">Projects</a>
           <a href="#faq" className="hover:text-[#00B4D8] transition-colors">FAQ</a>
@@ -22,13 +22,13 @@ export default function Header() {
           <a href="#contact" className="hover:text-[#00B4D8] transition-colors">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden text-black p-1 border-8 border-[#00B4D8] rounded-lg shadow-sm aspect-square flex items-center justify-center" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden text-white px-3 py-2 border border-white/30 rounded-lg" aria-label="Toggle menu">
           Menu
         </button>
       </div>
 
       {/* mobile menu */}
-      {open && <div className="md:hidden px-6 pb-4 text-gray-900 space-y-2 bg-white border-t border-gray-200">
+      {open && <div className="md:hidden px-6 pb-4 text-white space-y-2 bg-[#0B1F2A]">
           <a onClick={() => setOpen(false)} href="#services" className="block py-2 hover:text-[#00B4D8]">Services</a>
           <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-[#00B4D8]">Projects</a>
           <a onClick={() => setOpen(false)} href="#faq" className="block py-2 hover:text-[#00B4D8]">FAQ</a>
