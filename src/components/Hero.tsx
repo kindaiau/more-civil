@@ -1,3 +1,5 @@
+import newLogo from "@/assets/morecivil-logo.png";
+
 export default function Hero() {
   return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-40">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center px-10 py-32">
@@ -22,7 +24,7 @@ export default function Hero() {
 
         <div className="reveal">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white flex items-center justify-center gap-4">
-            <img src="/more-civil-transparent-logo.svg" alt="More Civil logo background" className="absolute w-3/4 opacity-10" />
+              <img src={newLogo} alt="More Civil logo background" className="absolute w-3/4 opacity-10" />
             
             <img src="/placeholder.svg" alt="Skid steer placeholder" className="h-full w-auto object-contain" data-tilt />
           </div>
