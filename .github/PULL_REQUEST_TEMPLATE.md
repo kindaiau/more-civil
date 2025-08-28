@@ -1,1 +1,0 @@
-Closing as duplicate of #1. We’re standardizing on the workflow and script introduced there to avoid duplication. If there’s a feature in this variant we should keep, let’s port it into #1 before merge.
