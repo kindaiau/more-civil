@@ -8,7 +8,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-[#0B1F2A]/95 shadow-lg' : 'bg-[#0B1F2A]/85'} backdrop-blur-sm border-b border-white/10`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-[70px] bg-neutral-50 rounded-none">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3 my-0 py-0 px-0">
           <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="More Civil" className="h-10 w-auto" />
           
