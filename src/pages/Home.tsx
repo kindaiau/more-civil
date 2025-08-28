@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import FAQ from "@/components/FAQ";
@@ -19,7 +18,6 @@ const Home = () => {
     <>
       <Header />
       <Hero />
-      <AboutSection />
       <Services />
       <Gallery />
       <FAQ />

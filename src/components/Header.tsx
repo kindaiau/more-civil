@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import newLogo from "@/assets/morecivil-logo.png";
+import { useEffect, useState } from 'react';
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -11,7 +10,7 @@ export default function Header() {
   return <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-white/20 shadow-lg' : 'bg-transparent'} backdrop-blur-sm`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3">
-          <img src={newLogo} alt="More Civil" className="h-30 w-auto -ml-14 bg-transparent" />
+          <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="More Civil" className="h-30 w-auto -ml-14 bg-transparent" />
           
         </a>
 
