@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-white text-slate-700 mt-16 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-10 py-24 grid md:grid-cols-3 gap-8">
         <div>
           <h3 className="text-slate-900 font-bold text-xl mb-3" style={{fontFamily:'Montserrat'}}>More Civil</h3>
           <p className="text-slate-600">Water cart delivery and civil earthworks across South Australia.</p>
