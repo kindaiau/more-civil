@@ -1,11 +1,11 @@
 export default function Hero() {
-  return (
-    <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-40">
+  return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-40">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center px-10 py-32">
         <div className="reveal">
-          <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl"
-              style={{fontFamily:'Montserrat'}}>
-            Water when you need it.<br/> Civil works you can trust.
+          <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl" style={{
+          fontFamily: 'Montserrat'
+        }}>
+            Water when you need it.<br /> Civil works you can trust.
           </h1>
           <p className="text-slate-600 mt-4 text-lg">
             Reliable water cart delivery and earthmoving across South Australia.
@@ -22,30 +22,16 @@ export default function Hero() {
 
         <div className="reveal">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white flex items-center justify-center gap-4">
-            <img
-              src="/MORECIVILFINALLOGOFORWEB.svg"
-              alt="More Civil logo background"
-              className="absolute w-3/4 opacity-10"
-            />
-            <img
-              src="/water-truck.png"
-              alt="More Civil water truck"
-              className="h-full w-auto object-contain"
-              data-tilt
-            />
-            <img
-              src="/placeholder.svg"
-              alt="Skid steer placeholder"
-              className="h-full w-auto object-contain"
-              data-tilt
-            />
+            <img src="/MORECIVILFINALLOGOFORWEB.svg" alt="More Civil logo background" className="absolute w-3/4 opacity-10" />
+            
+            <img src="/placeholder.svg" alt="Skid steer placeholder" className="h-full w-auto object-contain" data-tilt />
           </div>
         </div>
       </div>
 
       {/* Soft aqua glow */}
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl opacity-20"
-           style={{background:'radial-gradient(closest-side, #00B4D8, transparent)'}} />
-    </section>
-  );
+      <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl opacity-20" style={{
+      background: 'radial-gradient(closest-side, #00B4D8, transparent)'
+    }} />
+    </section>;
 }
