@@ -4,7 +4,10 @@ export default function Quote() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
         <div className="reveal rounded-2xl border border-slate-200 bg-white shadow-lg p-6">
           <h2 className="font-extrabold text-2xl mb-4" style={{fontFamily:'Montserrat'}}>Request a Quote</h2>
-          <form onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}} className="space-y-4">
+          <form
+            onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}}
+            className="flex flex-col space-y-4"
+          >
             <input required placeholder="Full Name" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             <input required type="email" placeholder="Email" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             <input required placeholder="Phone" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
@@ -18,13 +21,34 @@ export default function Quote() {
               <option>Other</option>
             </select>
             <textarea rows={4} placeholder="Tell us about your job…" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"></textarea>
-            <button className="bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-6 py-3 rounded-lg w-full hover:bg-[#00A3C4] transition-colors">Send Request</button>
+            <button
+              type="submit"
+              aria-label="Send Request"
+              className="ml-auto inline-flex items-center text-[#00B4D8]"
+            >
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </button>
           </form>
         </div>
 
         <div className="reveal rounded-2xl border border-slate-200 bg-white shadow-lg p-6" id="contact">
           <h2 className="font-extrabold text-2xl mb-4" style={{fontFamily:'Montserrat'}}>Book Water</h2>
-          <form onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}} className="space-y-4">
+          <form
+            onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}}
+            className="flex flex-col space-y-4"
+          >
             <input required placeholder="Name" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             <input required placeholder="Phone" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             <input type="email" placeholder="Email" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
@@ -36,7 +60,25 @@ export default function Quote() {
               </select>
               <input type="number" min="1" step="1" placeholder="Quantity (kL)" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             </div>
-            <button className="bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-6 py-3 rounded-lg w-full hover:bg-[#00A3C4] transition-colors">Book Delivery</button>
+            <button
+              type="submit"
+              aria-label="Book Delivery"
+              className="ml-auto inline-flex items-center text-[#00B4D8]"
+            >
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </button>
           </form>
         </div>
       </div>

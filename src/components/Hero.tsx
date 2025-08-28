@@ -11,8 +11,44 @@ export default function Hero() {
             Reliable water cart delivery and earthmoving across South Australia.
           </p>
           <div className="mt-8 flex gap-4">
-            <a href="#quote" className="bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-6 py-3 rounded-xl hover:bg-[#00A3C4] transition-colors">Request a Quote</a>
-            <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] px-6 py-3 rounded-xl hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
+            <a
+              href="#quote"
+              className="flex items-center gap-2 text-[#00B4D8]"
+            >
+              Request a Quote
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              className="flex items-center gap-2 text-[#00B4D8]"
+            >
+              Book Water
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
           <div className="mt-6 inline-flex items-center gap-3 rounded-xl border-8 border-[#00B4D8] bg-slate-50 px-4 py-3">
             <span className="text-[#00B4D8] font-extrabold bg-[#e0f7ff] rounded-full px-3 py-1 text-sm">Community</span>

@@ -25,12 +25,25 @@ const Home = () => {
       <Footer />
       
       {/* Floating CTA */}
-      <button 
-        className="fixed right-6 bottom-6 z-50 bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-4 py-3 rounded-xl shadow-lg hover:bg-[#00A3C4] transition-colors"
-        onClick={() => document.querySelector('#quote')?.scrollIntoView({behavior:'smooth'})}
+      <a
+        href="#quote"
+        className="fixed right-6 bottom-6 z-50 inline-flex items-center gap-2 text-[#00B4D8]"
       >
         Request a Quote
-      </button>
+        <svg
+          className="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14" />
+          <path d="M12 5l7 7-7 7" />
+        </svg>
+      </a>
     </>
   );
 };

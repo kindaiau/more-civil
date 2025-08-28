@@ -4,8 +4,23 @@ function QA({q, a}:{q:string; a:string}) {
   const [open, setOpen] = useState(false);
   return (
     <div className="reveal border border-slate-200 bg-white rounded-xl mb-3 overflow-hidden shadow-sm">
-      <button onClick={()=>setOpen(!open)} className="w-full text-left px-6 py-4 font-bold flex items-center justify-between hover:bg-slate-50 transition-colors">
-        {q} <span className={`transition-transform ${open ? 'rotate-45' : ''}`}>+</span>
+      <button
+        onClick={()=>setOpen(!open)}
+        className="w-full text-left px-6 py-4 font-bold flex items-center justify-between hover:bg-slate-50 transition-colors"
+      >
+        {q}
+        <svg
+          className={`w-4 h-4 transition-transform ${open ? 'rotate-90' : ''}`}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M9 5l7 7-7 7" />
+        </svg>
       </button>
       <div className={`px-6 overflow-hidden transition-[max-height] duration-300 ${open ? 'max-h-60 pb-4' : 'max-h-0'}`}>
         <p className="text-slate-700">{a}</p>
