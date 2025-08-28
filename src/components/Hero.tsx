@@ -21,11 +21,22 @@ export default function Hero() {
         </div>
 
         <div className="reveal">
-          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-gradient-to-br from-sky-900 to-slate-900 grid place-items-center">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white flex items-center justify-center gap-4">
+            <img
+              src="/MORECIVILFINALLOGOFORWEB.svg"
+              alt="More Civil logo background"
+              className="absolute w-3/4 opacity-10"
+            />
             <img
               src="/water-truck.png"
               alt="More Civil water truck"
-              className="w-[90%] h-auto float"
+              className="h-full w-auto object-contain"
+              data-tilt
+            />
+            <img
+              src="/placeholder.svg"
+              alt="Skid steer placeholder"
+              className="h-full w-auto object-contain"
               data-tilt
             />
           </div>
