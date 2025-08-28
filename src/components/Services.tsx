@@ -20,7 +20,25 @@ export default function Services() {
               <li>17,500 L trucks ready to go</li>
             </ul>
             <div className="mt-4">
-              <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 text-[#00B4D8] hover:underline"
+              >
+                Book Water
+                <svg
+                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </Card>
           
@@ -32,7 +50,25 @@ export default function Services() {
               <li>Clean, safe worksites</li>
             </ul>
             <div className="mt-4">
-              <a href="#quote" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">Request Quote</a>
+              <a
+                href="#quote"
+                className="group inline-flex items-center gap-2 text-[#00B4D8] hover:underline"
+              >
+                Request Quote
+                <svg
+                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </Card>
           
@@ -44,7 +80,25 @@ export default function Services() {
               <li>Local SA crew</li>
             </ul>
             <div className="mt-4">
-              <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">About us</a>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 text-[#00B4D8] hover:underline"
+              >
+                About us
+                <svg
+                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </Card>
         </div>
