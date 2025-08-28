@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-20">
+    <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-28">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 py-16">
         <div className="reveal">
           <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl"
