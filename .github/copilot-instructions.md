@@ -94,7 +94,7 @@ npm run preview # Must serve application successfully
 ### Styling Changes
 - Uses Tailwind CSS with custom design system
 - Brand colors: Blue (#00B4D8), Dark Blue (#0B1F2A)
-- Uses custom fonts: Inter (body), Montserrat (headings)
+- Uses custom font: Montserrat (site-wide)
 - Always test on different screen sizes
 
 ### CI/CD Integration
