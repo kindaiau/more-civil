@@ -2,9 +2,7 @@ export default function Hero() {
   return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-40">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center px-10 py-32">
         <div className="reveal">
-          <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl" style={{
-          fontFamily: 'Montserrat'
-        }}>
+          <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl">
             Water when you need it.<br /> Civil works you can trust.
           </h1>
           <p className="text-slate-600 mt-4 text-lg">
