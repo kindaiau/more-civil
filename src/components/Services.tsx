@@ -20,7 +20,7 @@ export default function Services() {
               <li>17,500 L trucks ready to go</li>
             </ul>
             <div className="mt-4">
-              <a href="#contact" className="bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00A3C4] transition-colors">Book Water</a>
+              <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
             </div>
           </Card>
           
