@@ -29,7 +29,7 @@ export default function Footer() {
         <img
           src="/accreditations.png"
           alt="Accreditations and memberships"
-          className="h-16 w-auto opacity-90"
+          className="h-48 w-auto opacity-90"
         />
       </div>
 
