@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Header from "@/components/Header";
+import HeroImage from "@/components/HeroImage";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      <HeroImage />
       <Hero />
       <Services />
       <Gallery />
