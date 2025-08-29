@@ -1,8 +1,8 @@
 export default function Hero() {
   return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-20">
-      {/* Hero Image directly under header */}
-      <div className="w-full">
-        <img src="/more-civil-hero-image-sharp.jpg" alt="More Civil hero image" className="w-full h-auto" />
+      {/* Hero Image directly under header with light blue background */}
+      <div className="w-full bg-gradient-to-r from-sky-100 to-blue-50">
+        <img src="/more-civil-hero-image.svg" alt="More Civil hero image" className="w-full h-auto" />
       </div>
       
       {/* Text content below image, full width */}
