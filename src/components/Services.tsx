@@ -6,7 +6,7 @@ const Card = ({
   badge: string;
   title: string;
   children: React.ReactNode;
-}) => <div className="rounded-2xl border border-slate-200 bg-white shadow-lg p-10">
+}) => <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-blue-50 to-white shadow-lg p-10">
     <span className="inline-block bg-[#e0f7ff] text-[#043b4a] px-3 py-1 rounded-full font-bold text-sm mb-3">{badge}</span>
     <h3 className="font-bold text-lg mb-3" style={{
     fontFamily: 'Montserrat'
