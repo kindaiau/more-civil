@@ -22,7 +22,7 @@ export default function Header() {
           <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] px-6 py-3 rounded-xl hover:bg-[#00B4D8] hover:text-white transition-colors">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden text-black p-1 border-2 border-[#00B4D8] rounded-lg shadow-sm aspect-square flex items-center justify-center" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden text-black p-1 border-2 border-[#00B4D8] rounded-lg shadow-sm h-30 w-auto flex items-center justify-center" aria-label="Toggle menu">
           Menu
         </button>
       </div>
