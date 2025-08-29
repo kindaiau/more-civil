@@ -1,17 +1,25 @@
-const Card = ({badge, title, children}:{badge:string; title:string; children:React.ReactNode}) => (
-  <div className="reveal rounded-2xl border-2 border-slate-200 bg-white shadow-lg p-10 h-full">
+const Card = ({
+  badge,
+  title,
+  children
+}: {
+  badge: string;
+  title: string;
+  children: React.ReactNode;
+}) => <div className="reveal rounded-2xl border border-slate-200 bg-white shadow-lg p-10">
     <span className="inline-block bg-[#e0f7ff] text-[#043b4a] px-3 py-1 rounded-full font-bold text-sm mb-3">{badge}</span>
-    <h3 className="font-bold text-lg mb-3" style={{fontFamily:'Montserrat'}}>{title}</h3>
+    <h3 className="font-bold text-lg mb-3" style={{
+    fontFamily: 'Montserrat'
+  }}>{title}</h3>
     <div className="[&>ul]:list-disc [&>ul]:pl-5 [&>p]:text-slate-700 [&>ul]:text-slate-700">{children}</div>
-  </div>
-);
-
+  </div>;
 export default function Services() {
-  return (
-    <section id="services" className="py-32 bg-white">
+  return <section id="services" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-10">
-        <h2 className="reveal font-extrabold text-3xl mb-8 text-center" style={{fontFamily:'Montserrat'}}>What we do</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 style={{
+        fontFamily: 'Montserrat'
+      }} className="reveal font-extrabold mb-8 text-4xl px-0 py-0 my-0 mx-[38px] text-center">What we do</h2>
+        <div className="grid md:grid-cols-3 gap-12">
           <Card badge="Water Delivery" title="Potable & non-potable">
             <p>Bulk deliveries for tanks, pools, events, civil & roadworks.</p>
             <ul className="mt-3">
@@ -20,7 +28,7 @@ export default function Services() {
               <li>17,500 L trucks ready to go</li>
             </ul>
             <div className="mt-4">
-              <a href="#contact" className="bg-[#00B4D8] text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl hover:bg-[#00A3C4] transition-colors">Book Water</a>
+              <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
             </div>
           </Card>
           
@@ -32,7 +40,7 @@ export default function Services() {
               <li>Clean, safe worksites</li>
             </ul>
             <div className="mt-4">
-              <a href="#quote" className="bg-[#00B4D8] text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl hover:bg-[#00A3C4] transition-colors">Request Quote</a>
+              <a href="#quote" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">Request Quote</a>
             </div>
           </Card>
           
@@ -44,11 +52,10 @@ export default function Services() {
               <li>Local SA crew</li>
             </ul>
             <div className="mt-4">
-              <a href="#contact" className="bg-[#00B4D8] text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl hover:bg-[#00A3C4] transition-colors">About us</a>
+              <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">About us</a>
             </div>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
