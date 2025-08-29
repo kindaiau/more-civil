@@ -36,7 +36,7 @@ export default function Quote() {
               </select>
               <input type="number" min="1" step="1" placeholder="Quantity (kL)" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             </div>
-            <button className="bg-[#00B4D8] text-[#0B1F2A] font-semibold px-6 py-3 rounded-lg w-full hover:bg-[#00A3C4] transition-colors border-2 border-[#0B1F2A]">Book Delivery</button>
+            <button className="bg-gradient-to-r from-[#00B4D8] to-white text-[#0B1F2A] font-semibold px-6 py-3 rounded-lg w-full shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A]">Book Delivery</button>
           </form>
         </div>
       </div>
