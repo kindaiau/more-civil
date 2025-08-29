@@ -21,10 +21,8 @@ export default function Hero() {
         </div>
 
         <div className="reveal">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white flex items-center justify-center gap-4 mx-[18px] px-0 py-[9px]">
-            <img src="/more-civil-transparent-logo.svg" alt="More Civil logo background" className="absolute w-3/4 opacity-10" />
-            
-            
+          <div className="w-full">
+            <img src="/more-civil-hero-image.svg" alt="More Civil hero image" className="w-full h-auto" />
           </div>
         </div>
       </div>
