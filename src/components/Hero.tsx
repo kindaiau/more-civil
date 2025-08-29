@@ -21,10 +21,10 @@ export default function Hero() {
         </div>
 
         <div className="reveal">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white flex items-center justify-center gap-4">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-white flex items-center justify-center gap-4 mx-[18px] px-0 py-[9px]">
             <img src="/more-civil-transparent-logo.svg" alt="More Civil logo background" className="absolute w-3/4 opacity-10" />
             
-            <img src="/placeholder.svg" alt="Skid steer placeholder" className="h-full w-auto object-contain" data-tilt />
+            
           </div>
         </div>
       </div>
