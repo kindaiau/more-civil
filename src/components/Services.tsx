@@ -14,7 +14,7 @@ const Card = ({
     <div className="[&>ul]:list-disc [&>ul]:pl-5 [&>p]:text-slate-700 [&>ul]:text-slate-700">{children}</div>
   </div>;
 export default function Services() {
-  return <section id="services" className="py-32 bg-white">
+  return <section id="services" className="py-40 bg-white">
       <div className="max-w-7xl mx-auto px-10">
         <h2 style={{
         fontFamily: 'Montserrat'
