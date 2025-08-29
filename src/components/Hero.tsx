@@ -17,7 +17,7 @@ export default function Hero() {
             Reliable water cart delivery and earthmoving across South Australia.
           </p>
           <div className="mt-8 flex gap-4 justify-center">
-            <a href="#quote" className="bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-6 py-3 rounded-xl hover:bg-[#00A3C4] transition-colors">Request a Quote</a>
+            <a href="#quote" className="bg-[#00B4D8] text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl hover:bg-[#00A3C4] transition-colors">Request a Quote</a>
             <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] px-6 py-3 rounded-xl hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
           </div>
           <div className="mt-6 inline-flex items-center gap-3 rounded-xl border-8 border-[#00B4D8] bg-slate-50 px-4 py-3">
