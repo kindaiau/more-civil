@@ -6,7 +6,7 @@ export default function Hero() {
       </div>
       
       {/* Text content below image, full width */}
-      <div className="w-full px-10 py-24">
+      <div className="w-full px-10 py-16">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl" style={{
             fontFamily: 'Montserrat'
