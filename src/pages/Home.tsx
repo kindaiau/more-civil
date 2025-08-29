@@ -26,7 +26,7 @@ const Home = () => {
       
       {/* Floating CTA */}
       <button 
-        className="fixed right-6 bottom-6 z-50 bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-4 py-3 rounded-xl shadow-lg hover:bg-[#00A3C4] transition-colors"
+        className="fixed right-6 bottom-6 z-50 bg-[#00B4D8] text-[#0B1F2A] font-semibold px-4 py-3 rounded-xl shadow-lg hover:bg-[#00A3C4] transition-colors"
         onClick={() => document.querySelector('#quote')?.scrollIntoView({behavior:'smooth'})}
       >
         Request a Quote
