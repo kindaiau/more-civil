@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
+import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import Quote from "@/components/Quote";
 import Footer from "@/components/Footer";
@@ -20,12 +21,13 @@ const Home = () => {
       <Hero />
       <Services />
       <Gallery />
+      <Reviews />
       <FAQ />
       <Quote />
       <Footer />
-      
+
       {/* Floating CTA */}
-      <button 
+      <button
         className="fixed right-6 bottom-6 z-50 bg-[#00B4D8] text-[#0B1F2A] font-extrabold px-4 py-3 rounded-xl shadow-lg hover:bg-[#00A3C4] transition-colors"
         onClick={() => document.querySelector('#quote')?.scrollIntoView({behavior:'smooth'})}
       >
