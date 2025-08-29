@@ -19,7 +19,7 @@ export default function Services() {
         <h2 style={{
         fontFamily: 'Montserrat'
       }} className="reveal font-extrabold mb-8 text-4xl px-0 py-0 my-0 mx-[38px] text-center">What we do</h2>
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           <Card badge="Water Delivery" title="Potable & non-potable">
             <p>Bulk deliveries for tanks, pools, events, civil & roadworks.</p>
             <ul className="mt-3">
