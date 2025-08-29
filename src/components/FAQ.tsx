@@ -24,6 +24,7 @@ export default function FAQ() {
         <QA q="Do you handle tight access?" a="Yes. Our operators plan access and safety on every job, including tight sites." />
         <QA q="What areas do you service?" a="We service all of South Australia, with 24/7 emergency response available across the state." />
         <QA q="Are you fully licensed and insured?" a="Yes, we're fully licensed water carriers, AWA members, and carry comprehensive insurance. SWMS and risk assessments available on request." />
+        <QA q="Is it spring water?" a="Our water sources vary depending on availability and your specific requirements. We can provide details about the source for your delivery upon request." />
       </div>
     </section>
   );
