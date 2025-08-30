@@ -19,7 +19,7 @@ const Home = () => {
       <Gallery />
       <FAQ />
       <Quote />
-      <Footer className="px-[10px]" />
+      <Footer />
       
       {/* Floating CTA */}
       <button onClick={() => document.querySelector('#quote')?.scrollIntoView({
