@@ -17,6 +17,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6 text-black font-semibold">
           <a href="#services" className="text-black hover:text-[#00B4D8] transition-colors">Services</a>
           <a href="#projects" className="text-black hover:text-[#00B4D8] transition-colors">Projects</a>
+          <a href="/blog" className="text-black hover:text-[#00B4D8] transition-colors">Blog</a>
           <a href="#faq" className="text-black hover:text-[#00B4D8] transition-colors">FAQ</a>
           <a href="#quote" className="text-black hover:text-[#00B4D8] transition-colors">Quote</a>
           <a href="#contact" className="bg-gradient-to-r from-[#00B4D8] to-white text-black font-semibold px-6 py-3 rounded-xl shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A]">Contact</a>
@@ -31,6 +32,7 @@ export default function Header() {
       {open && <div className="md:hidden px-6 pb-4 text-gray-900 space-y-2 bg-white border-t border-gray-200">
           <a onClick={() => setOpen(false)} href="#services" className="block py-2 hover:text-[#00B4D8]">Services</a>
           <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-[#00B4D8]">Projects</a>
+          <a onClick={() => setOpen(false)} href="/blog" className="block py-2 hover:text-[#00B4D8]">Blog</a>
           <a onClick={() => setOpen(false)} href="#faq" className="block py-2 hover:text-[#00B4D8]">FAQ</a>
           <a onClick={() => setOpen(false)} href="#quote" className="block py-2 hover:text-[#00B4D8]">Quote</a>
           <a onClick={() => setOpen(false)} href="#contact" className="block py-2 hover:text-[#00B4D8]">Contact</a>
