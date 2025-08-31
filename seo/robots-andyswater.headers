@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+date: Sun, 31 Aug 2025 08:39:57 GMT
+server: envoy
+
+HTTP/1.1 200 OK
+date: Sun, 31 Aug 2025 08:39:58 GMT
+server: envoy
+x-robots-tag: noindex, follow
+link: <https://andyswater.com.au/wp-json/>; rel="https://api.w.org/"
+vary: Accept-Encoding
+content-length: 173
+content-type: text/plain; charset=utf-8
+x-envoy-upstream-service-time: 602
+

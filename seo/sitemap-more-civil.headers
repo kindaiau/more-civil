@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+date: Sun, 31 Aug 2025 08:39:56 GMT
+server: envoy
+
+HTTP/1.1 200 OK
+date: Sun, 31 Aug 2025 08:39:56 GMT
+content-length: 0
+cf-ray: 977b3862e8e769c0-DFW
+strict-transport-security: max-age=31536000; includeSubDomains
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+server: envoy
+x-envoy-upstream-service-time: 305
+

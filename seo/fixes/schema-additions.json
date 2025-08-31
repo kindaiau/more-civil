@@ -1,0 +1,30 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Water Delivery",
+    "provider": {"@type": "LocalBusiness", "name": "MORECIVIL"},
+    "areaServed": "South Australia"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Dust Suppression",
+    "provider": {"@type": "LocalBusiness", "name": "MORECIVIL"},
+    "areaServed": "South Australia"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Tank Fills",
+    "provider": {"@type": "LocalBusiness", "name": "MORECIVIL"},
+    "areaServed": "South Australia"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Civil Works",
+    "provider": {"@type": "LocalBusiness", "name": "MORECIVIL"},
+    "areaServed": "South Australia"
+  }
+]
