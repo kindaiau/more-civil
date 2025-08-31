@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://www.morecivil.au</loc>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.morecivil.au/services</loc>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.morecivil.au/contact-us</loc>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2024-11-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.morecivil.au/service-locations</loc>
+        <priority>1.0</priority>
+        <changefreq>monthly</changefreq>
+        <lastmod>2024-11-13</lastmod>
+    </url>
+</urlset>

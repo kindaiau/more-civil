@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+date: Sun, 31 Aug 2025 08:39:58 GMT
+server: envoy
+
+HTTP/1.1 301 Moved Permanently
+date: Sun, 31 Aug 2025 08:39:59 GMT
+server: envoy
+x-redirect-by: WordPress
+location: https://andyswater.com.au/wp-sitemap.xml
+content-length: 0
+content-type: text/html; charset=UTF-8
+x-envoy-upstream-service-time: 583
+
