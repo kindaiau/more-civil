@@ -25,7 +25,14 @@ const Water = () => {
             </div>
             
             <div className="media">
-              <img src="/water-truck.png" alt="MORECIVIL water delivery truck" className="max-w-full h-auto reveal tilt float" />
+              <img
+                src="/water-truck.png"
+                alt="MORECIVIL water delivery truck"
+                className="max-w-full h-auto reveal tilt float"
+                width="800"
+                height="600"
+                decoding="async"
+              />
             </div>
           </div>
         </div>

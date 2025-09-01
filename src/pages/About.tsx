@@ -151,10 +151,14 @@ const About = () => {
       <section className="section alt">
         <div className="container text-center">
           <h2 className="mb-8">Certifications & Accreditations</h2>
-          <img 
-            src={accreditations} 
-            alt="MORECIVIL accreditations - South Australia, AWA, Department for Environment and Water" 
+          <img
+            src={accreditations}
+            alt="MORECIVIL accreditations - South Australia, AWA, Department for Environment and Water"
             className="mx-auto max-w-full h-auto opacity-80 mb-8"
+            width="800"
+            height="512"
+            loading="lazy"
+            decoding="async"
           />
           <div className="grid grid-2">
             <div className="cert-list">
