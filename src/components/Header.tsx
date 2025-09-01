@@ -10,7 +10,14 @@ export default function Header() {
   return <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-white/20 shadow-lg' : 'bg-transparent'} backdrop-blur-sm`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3 mx-[12px] py-0 my-0 px-[30px]">
-          <img src="/more-civil-transparent-logo.svg" alt="More Civil" className="h-30 w-auto -ml-14 bg-transparent" />
+          <img
+            src="/more-civil-transparent-logo.svg"
+            alt="More Civil"
+            className="h-30 w-auto -ml-14 bg-transparent"
+            width="454"
+            height="170"
+            decoding="async"
+          />
           
         </a>
 
