@@ -101,3 +101,10 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Google Reviews
+
+The homepage displays recent Google reviews. To enable this feature:
+
+1. Create a Google Maps API key and add it as `GOOGLE_MAPS_API_KEY` in your repository secrets and runtime environment.
+2. The business Place ID is resolved from the share link defined in `api/reviews.ts`. To change the business, update the `shareLink` constant in that file and delete `.cache/place-id.json` to refresh the cached ID.
