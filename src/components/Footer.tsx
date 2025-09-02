@@ -33,9 +33,9 @@ export default function Footer() {
         <img
           src="/accreditations.png"
           alt="Accreditations and memberships"
-          className="h-48 w-auto opacity-90"
-          width="384"
-          height="192"
+          className="h-60 w-100 opacity-90"
+          width="400"
+          height="240"
         />
       </div>
 
