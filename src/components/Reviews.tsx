@@ -23,7 +23,7 @@ export default function Reviews() {
   const [meta, setMeta] = useState<{ rating?: number; total?: number }>({});
 
   useEffect(() => {
-    fetch('/api/reviews')
+    fetch('https://ccwbdarlfwmqbeftppzk.supabase.co/functions/v1/google-reviews')
       .then((res) => res.json())
       .then((data) => {
         if (data?.reviews) setReviews(data.reviews);
