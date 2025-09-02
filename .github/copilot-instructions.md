@@ -26,9 +26,9 @@ npm run lint    # Run ESLint - takes ~2 seconds. Returns warnings only (no error
 ```
 
 ### Expected Build Behavior
-- **Dependencies install**: 16-36 seconds with 3 moderate dev-only vulnerabilities (esbuild) - this is NORMAL and doesn't affect production
+- **Dependencies install**: 16 seconds with 3 moderate dev-only vulnerabilities (esbuild) - this is NORMAL and doesn't affect production
 - **Build succeeds**: 3-4 seconds generating optimized bundle in `dist/` directory with assets:
-  - `dist/index.html` (1.7KB) - Main HTML file
+  - `dist/index.html` (2.5KB) - Main HTML file
   - `dist/assets/index-*.js` (~365KB) - Minified JavaScript bundle  
   - `dist/assets/index-*.css` (~65KB) - Optimized CSS bundle
   - `dist/assets/*` - Optimized images and static assets
@@ -153,7 +153,7 @@ Both require GitHub secrets for Supabase environment variables.
 
 ### Performance Notes
 - Development server starts very quickly (<1 second)
-- Build process is fast (~4 seconds)
+- Build process is fast (~3-4 seconds)
 - Hot reload works efficiently in development
 - Production build generates optimized bundle with code splitting
 
