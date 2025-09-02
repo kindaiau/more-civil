@@ -8,6 +8,9 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="text-slate-900 font-bold text-xl mb-3" style={{fontFamily:'Montserrat'}}>Contact</h3>
+          <p className="text-slate-600 mb-2">
+            Name: Shaun Reid
+          </p>
           <p className="text-slate-600">
             Phone: <a href="tel:0455677833" className="hover:text-[#00B4D8] transition-colors">0455 677 833</a><br/>
             Email: <a href="mailto:shaunreid1@icloud.com" className="hover:text-[#00B4D8] transition-colors">shaunreid1@icloud.com</a>
