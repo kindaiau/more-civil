@@ -40,7 +40,7 @@ export default function Reviews() {
           <a
             href="https://share.google/LBMsDS1gd4AzBJGTh"
             target="_blank"
-            rel="nofollow noopener"
+            rel="nofollow noopener noreferrer"
             className="text-[#00B4D8] hover:underline"
           >
             Read more reviews on Google
