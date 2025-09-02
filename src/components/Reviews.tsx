@@ -114,9 +114,8 @@ export default function Reviews() {
                 <p
                   className="text-sm text-slate-700"
                   style={{
-                    display: '-webkit-box',
-                    WebkitLineClamp: 3,
                     WebkitBoxOrient: 'vertical',
+                    '-webkit-box-orient': 'vertical',
                     overflow: 'hidden',
                   }}
                 >
