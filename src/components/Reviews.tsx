@@ -115,7 +115,6 @@ export default function Reviews() {
                   className="text-sm text-slate-700"
                   style={{
                     WebkitBoxOrient: 'vertical',
-                    '-webkit-box-orient': 'vertical',
                     overflow: 'hidden',
                   }}
                 >
