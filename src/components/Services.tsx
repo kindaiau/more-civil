@@ -68,15 +68,15 @@ export default function Services() {
             <ul className="mt-3 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span>Laser-accurate levels and compaction</span>
+                <span>Soil Removal</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span>Tight-access specialists</span>
+                <span>Driveways</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">✓</span>
-                <span>Clean, safe work sites</span>
+                <span>Site Preparation</span>
               </li>
             </ul>
             <div className="mt-4">
