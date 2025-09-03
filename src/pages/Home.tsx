@@ -2,7 +2,7 @@ import { useEffect, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import Reviews from "@/components/Reviews";
+import ReviewsSection from "@/components/Reviews";
 const Gallery = lazy(() => import("@/components/Gallery"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Quote = lazy(() => import("@/components/Quote"));
@@ -13,6 +13,24 @@ const Home = () => {
     mountReveal();
     mountTilt();
   }, []);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.id = "ld-localbusiness";
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "More Civil",
+      address: { "@type": "PostalAddress", addressRegion: "SA", addressCountry: "AU" },
+      url: "https://more-civil.lovable.app/",
+      aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "3" },
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   return (
     <>
       <Header />
@@ -21,7 +39,7 @@ const Home = () => {
       <Suspense fallback={null}>
         <Gallery />
       </Suspense>
-      <Reviews />
+      <ReviewsSection />
       <Suspense fallback={null}>
         <FAQ />
       </Suspense>
