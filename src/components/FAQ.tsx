@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Container } from "@/components/ui/container";
 
-function QA({q, a}:{q:string; a:string}) {
+function QA({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="reveal border border-slate-200 bg-white rounded-xl mb-3 overflow-hidden shadow-sm">
@@ -16,16 +17,23 @@ function QA({q, a}:{q:string; a:string}) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-32 bg-white">
-      <div className="max-w-3xl mx-auto px-10">
-        <h2 className="reveal font-extrabold text-3xl mb-8 text-center" style={{fontFamily:'Montserrat'}}>FAQs</h2>
-        <QA q="Do you deliver potable water?" a="Yes. We supply potable and non-potable water and can advise the best option for your job." />
-        <QA q="How much can you deliver per load?" a="2,000 L trailers and 8,000 L / 13,000 L / 17,500 L trucks. Multiple loads can be scheduled for large fills." />
-        <QA q="Do you handle tight access?" a="Yes. Our operators plan access and safety on every job, including tight sites." />
-        <QA q="What areas do you service?" a="We service all of South Australia, with 24/7 emergency response available across the state." />
-        <QA q="Are you fully licensed and insured?" a="Yes, we're fully licensed water carriers, AWA members, and carry comprehensive insurance. SWMS and risk assessments available on request." />
-        <QA q="Is it spring water?" a="No, it's not spring water. We supply the same water that comes out of your taps." />
-      </div>
+    <section id="faq" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <Container>
+        <div className="max-w-3xl mx-auto">
+          <h2
+            className="reveal font-extrabold text-3xl mb-8 text-center"
+            style={{ fontFamily: 'Montserrat' }}
+          >
+            FAQs
+          </h2>
+          <QA q="Do you deliver potable water?" a="Yes. We supply potable and non-potable water and can advise the best option for your job." />
+          <QA q="How much can you deliver per load?" a="2,000 L trailers and 8,000 L / 13,000 L / 17,500 L trucks. Multiple loads can be scheduled for large fills." />
+          <QA q="Do you handle tight access?" a="Yes. Our operators plan access and safety on every job, including tight sites." />
+          <QA q="What areas do you service?" a="We service all of South Australia, with 24/7 emergency response available across the state." />
+          <QA q="Are you fully licensed and insured?" a="Yes, we're fully licensed water carriers, AWA members, and carry comprehensive insurance. SWMS and risk assessments available on request." />
+          <QA q="Is it spring water?" a="No, it's not spring water. We supply the same water that comes out of your taps." />
+        </div>
+      </Container>
     </section>
   );
 }
