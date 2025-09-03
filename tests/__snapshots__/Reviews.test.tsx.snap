@@ -4,11 +4,11 @@ exports[`Reviews component > renders fetched reviews 1`] = `
 <div>
   <section
     aria-labelledby="reviews-title"
-    class="mt-12"
+    class="py-12 sm:py-16 lg:py-20"
     id="reviews"
   >
     <div
-      class="max-w-7xl mx-auto px-10"
+      class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8"
     >
       <h2
         class="text-3xl font-extrabold text-center mb-8"
@@ -134,7 +134,7 @@ exports[`Reviews component > renders fetched reviews 1`] = `
           </div>
           <p
             class="text-sm text-slate-700"
-            style="display: -webkit-box; -webkit-line-clamp: 3; overflow: hidden;"
+            style="overflow: hidden;"
           >
             Great work!
           </p>
