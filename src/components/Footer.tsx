@@ -1,7 +1,9 @@
+import { Container } from "@/components/ui/container";
+
 export default function Footer() {
   return (
     <footer className="bg-white text-slate-700 mt-16 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-8">
+      <Container className="py-12 sm:py-16 lg:py-20 grid md:grid-cols-3 gap-6 sm:gap-8">
         <div>
           <h3 className="text-slate-900 font-bold text-xl mb-3" style={{fontFamily:'Montserrat'}}>More Civil</h3>
           <p className="text-slate-600">Water cart delivery and civil earthworks across South Australia.</p>
@@ -27,9 +29,9 @@ export default function Footer() {
             <li><a href="#contact" className="hover:text-[#00B4D8] transition-colors">Contact</a></li>
           </ul>
         </div>
-      </div>
+      </Container>
 
-      <div className="border-t border-slate-200 py-6 flex justify-center">
+      <Container className="border-t border-slate-200 py-6 flex justify-center">
         <img
           src="/accreditations.png"
           alt="Accreditations and memberships"
@@ -37,7 +39,7 @@ export default function Footer() {
           width="384"
           height="192"
         />
-      </div>
+      </Container>
 
       <div className="text-center text-sm text-slate-500 pb-6">
         © {new Date().getFullYear()} More Civil. All rights reserved.

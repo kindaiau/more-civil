@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Star } from 'lucide-react';
+import { Container } from "@/components/ui/container";
 
 interface Review {
   author_name: string;
@@ -64,8 +65,8 @@ export default function Reviews() {
   if (!loading && reviews.length === 0) return null;
 
   return (
-    <section id="reviews" className="mt-12" aria-labelledby="reviews-title">
-      <div className="max-w-7xl mx-auto px-10">
+    <section id="reviews" className="py-12 sm:py-16 lg:py-20" aria-labelledby="reviews-title">
+      <Container>
         <h2
           id="reviews-title"
           className="text-3xl font-extrabold text-center mb-8"
@@ -159,7 +160,7 @@ export default function Reviews() {
             See all reviews on Google →
           </a>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
