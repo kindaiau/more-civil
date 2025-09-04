@@ -1,8 +1,5 @@
 import React from 'react'
-import WaterTruck1 from '../../assets/water/watertruck-1.webp'
-import WaterTruck2 from '../../assets/water/watertruck-2.webp'
-import Project1 from '../../assets/projects/project-1.webp'
-import Project2 from '../../assets/projects/project-2.webp'
+import waterTruckImage from '@/assets/water-truck.png'
 
 const Home: React.FC = () => {
   return (
@@ -28,8 +25,8 @@ const Home: React.FC = () => {
 
           <div className="bg-white shadow rounded p-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <img src={WaterTruck1} alt="Water truck side" className="w-full h-48 object-cover rounded" />
-              <img src={WaterTruck2} alt="Water truck rear" className="w-full h-48 object-cover rounded" />
+              <img src={waterTruckImage} alt="Water truck side" className="w-full h-48 object-cover rounded" />
+              <img src={waterTruckImage} alt="Water truck rear" className="w-full h-48 object-cover rounded" />
             </div>
           </div>
         </div>
@@ -43,12 +40,12 @@ const Home: React.FC = () => {
           <p className="text-gray-700 mb-6">Here are a few of our recent projects showcasing our earthmoving, drainage and site preparation capabilities.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded overflow-hidden">
-              <img src={Project1} alt="Project 1" className="w-full h-48 object-cover" />
+            <div className="rounded overflow-hidden bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500">Project Image Coming Soon</span>
             </div>
 
-            <div className="rounded overflow-hidden">
-              <img src={Project2} alt="Project 2" className="w-full h-48 object-cover" />
+            <div className="rounded overflow-hidden bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500">Project Image Coming Soon</span>
             </div>
 
             <div className="rounded overflow-hidden flex items-center justify-center border border-dashed border-gray-200">
