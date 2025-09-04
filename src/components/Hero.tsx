@@ -1,7 +1,7 @@
 export default function Hero() {
-  return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-20">
+  return <section id="home" className="relative bg-white text-slate-900 overflow-hidden">
       {/* Hero Image directly under header with light blue background */}
-      <div className="w-full bg-gradient-to-r from-[#00B4D8] to-white">
+      <div className="w-full bg-gradient-to-r from-[#00B4D8] to-white pt-20">
         <img
           src="/more-civil-hero-image.svg"
           alt="More Civil hero image"
