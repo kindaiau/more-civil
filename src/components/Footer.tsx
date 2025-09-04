@@ -29,15 +29,6 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-slate-200 py-6 flex justify-center">
-        <img
-          src="/accreditations.png"
-          alt="Accreditations and memberships"
-          className="h-48 w-auto opacity-90"
-          width="384"
-          height="192"
-        />
-      </div>
 
       <div className="text-center text-sm text-slate-500 pb-6">
         © {new Date().getFullYear()} More Civil. All rights reserved.
