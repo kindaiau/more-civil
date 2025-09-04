@@ -1,6 +1,7 @@
 import { useEffect, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ServiceIntro from "@/components/ServiceIntro";
 import Services from "@/components/Services";
 import ReviewsSection from "@/components/Reviews";
 import WaterQuality from "@/components/WaterQuality";
@@ -50,6 +51,7 @@ const Index = () => {
     <>
       <Header />
       <Hero />
+      <ServiceIntro />
       <Services />
       <Suspense fallback={null}>
         <Gallery />
