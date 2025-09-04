@@ -31,9 +31,9 @@ export default function Hero() {
             <img
               src="/accreditations.png"
               alt="Industry certifications and memberships"
-              className="h-24 w-auto mx-auto opacity-90"
-              width="192"
-              height="96"
+              className="h-48 w-auto mx-auto opacity-90"
+              width="384"
+              height="192"
             />
             <p className="text-sm text-slate-500 mt-2">Fully insured • SWMS available • Local SA crew</p>
           </div>
