@@ -5,8 +5,7 @@ import waterTruckImage from '@/assets/water-truck.png'
 const Home: React.FC = () => {
   return (
     <Layout>
-      <main className="container mx-auto px-4 py-8">
-      {/* Hero - kept untouched (assuming site has its own hero) */}
+      <div className="pt-20 container mx-auto px-4 py-8">
 
       {/* Services / Water Cartage Section */}
       <section className="mt-8">
@@ -61,7 +60,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      </main>
+      </div>
     </Layout>
   )
 }
