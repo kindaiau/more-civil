@@ -2,7 +2,7 @@ export default function Quote() {
   return (
     <section id="quote" className="py-32 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-8">
-        <div className="reveal rounded-2xl border border-slate-200 bg-white shadow-lg p-10 h-full">
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-lg p-10 h-full">
           <h2 className="font-extrabold text-2xl mb-4" style={{fontFamily:'Montserrat'}}>Request a Quote</h2>
           <form onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}} className="space-y-8">
             <input required placeholder="Full Name" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
@@ -22,7 +22,7 @@ export default function Quote() {
           </form>
         </div>
 
-        <div className="reveal rounded-2xl border border-slate-200 bg-card shadow-lg p-10 h-full" id="contact">
+        <div className="rounded-2xl border border-slate-200 bg-card shadow-lg p-10 h-full" id="contact">
           <h2 className="font-extrabold text-2xl mb-4 text-card-foreground" style={{fontFamily:'Montserrat'}}>Book Water</h2>
           <form onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}} className="space-y-6">
             <input 
