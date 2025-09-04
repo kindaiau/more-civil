@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import roadConstruction from '@/assets/project-road-construction.jpg';
+import waterInfrastructure from '@/assets/project-water-infrastructure.jpg';
+import bridgeConstruction from '@/assets/project-bridge-construction.jpg';
+import environmentalAssessment from '@/assets/project-environmental-assessment.jpg';
+import waterDelivery from '@/assets/project-water-delivery.jpg';
+import commercialBuilding from '@/assets/project-commercial-building.jpg';
 
-// Placeholder images - replace with actual project images
 const projectImages = [
-  { id: 1, src: '/water-truck.png', alt: 'Civil Works Project 1', title: 'Infrastructure Development' },
-  { id: 2, src: '/water-truck.png', alt: 'Civil Works Project 2', title: 'Road Construction' },
-  { id: 3, src: '/water-truck.png', alt: 'Water Delivery Project 1', title: 'Water Tank Installation' },
-  { id: 4, src: '/water-truck.png', alt: 'Water Delivery Project 2', title: 'Emergency Water Supply' },
-  { id: 5, src: '/water-truck.png', alt: 'Compliance Project 1', title: 'Environmental Assessment' },
-  { id: 6, src: '/water-truck.png', alt: 'Compliance Project 2', title: 'Safety Inspection' },
+  { id: 1, src: roadConstruction, alt: 'Road construction and infrastructure development project', title: 'Road Construction & Infrastructure' },
+  { id: 2, src: waterInfrastructure, alt: 'Water tank installation and pipeline infrastructure project', title: 'Water Infrastructure Development' },
+  { id: 3, src: bridgeConstruction, alt: 'Modern bridge construction with steel framework', title: 'Bridge Construction Project' },
+  { id: 4, src: environmentalAssessment, alt: 'Environmental compliance assessment and monitoring', title: 'Environmental Assessment' },
+  { id: 5, src: waterDelivery, alt: 'Emergency water delivery and supply services', title: 'Emergency Water Supply' },
+  { id: 6, src: commercialBuilding, alt: 'Commercial building construction project', title: 'Commercial Development' },
 ];
 
 export default function Gallery() {
