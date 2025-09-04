@@ -1,6 +1,16 @@
 export default function Footer() {
   return (
-    <footer className="bg-white text-slate-700 mt-16 border-t border-slate-200">
+    <>
+      {/* Emergency Contact Banner */}
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white text-center py-3 px-4">
+        <div className="flex items-center justify-center gap-2 text-sm font-bold">
+          <span className="animate-pulse">🚨</span>
+          <span>24/7 Emergency Water Delivery Available</span>
+          <a href="tel:0455677833" className="underline hover:no-underline ml-2">Call 0455 677 833</a>
+        </div>
+      </div>
+      
+      <footer className="bg-white text-slate-700 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-8">
         <div>
           <h3 className="text-slate-900 font-bold text-xl mb-3" style={{fontFamily:'Montserrat'}}>More Civil</h3>
@@ -33,6 +43,7 @@ export default function Footer() {
       <div className="text-center text-sm text-slate-500 pb-6">
         © {new Date().getFullYear()} More Civil. All rights reserved.
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }

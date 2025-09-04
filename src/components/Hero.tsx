@@ -1,14 +1,5 @@
 export default function Hero() {
   return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-20">
-      {/* Emergency Contact Banner */}
-      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white text-center py-2 px-4">
-        <div className="flex items-center justify-center gap-2 text-sm font-bold">
-          <span className="animate-pulse">🚨</span>
-          <span>24/7 Emergency Water Delivery Available</span>
-          <a href="tel:0455677833" className="underline hover:no-underline ml-2">Call 0455 677 833</a>
-        </div>
-      </div>
-
       {/* Hero Image directly under header with light blue background */}
       <div className="w-full bg-gradient-to-r from-[#00B4D8] to-white">
         <img

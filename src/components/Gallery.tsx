@@ -1,19 +1,9 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import roadConstruction from '@/assets/project-road-construction.jpg';
-import waterInfrastructure from '@/assets/project-water-infrastructure.jpg';
-import bridgeConstruction from '@/assets/project-bridge-construction.jpg';
-import environmentalAssessment from '@/assets/project-environmental-assessment.jpg';
-import waterDelivery from '@/assets/project-water-delivery.jpg';
-import commercialBuilding from '@/assets/project-commercial-building.jpg';
+import waterTruck from '@/assets/water-truck.png';
 
 const projectImages = [
-  { id: 1, src: roadConstruction, alt: 'Road construction and infrastructure development project', title: 'Road Construction & Infrastructure' },
-  { id: 2, src: waterInfrastructure, alt: 'Water tank installation and pipeline infrastructure project', title: 'Water Infrastructure Development' },
-  { id: 3, src: bridgeConstruction, alt: 'Modern bridge construction with steel framework', title: 'Bridge Construction Project' },
-  { id: 4, src: environmentalAssessment, alt: 'Environmental compliance assessment and monitoring', title: 'Environmental Assessment' },
-  { id: 5, src: waterDelivery, alt: 'Emergency water delivery and supply services', title: 'Emergency Water Supply' },
-  { id: 6, src: commercialBuilding, alt: 'Commercial building construction project', title: 'Commercial Development' },
+  { id: 1, src: waterTruck, alt: 'More Civil water truck delivering water across South Australia', title: 'Water Delivery Services' },
 ];
 
 export default function Gallery() {
