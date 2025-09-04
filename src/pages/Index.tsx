@@ -1,27 +1,13 @@
-import React from 'react'
-import Layout from '@/components/Layout'
-import Hero from '@/components/Hero'
-import Services from '@/components/Services'
-import Gallery from '@/components/Gallery'
-import Reviews from '@/components/Reviews'
-import FAQ from '@/components/FAQ'
-import Quote from '@/components/Quote'
-import Footer from '@/components/Footer'
+// Update this page (the content is just a fallback if you fail to update the page)
 
 const Index = () => {
-  console.log('Index component rendering...');
-  
   return (
-    <Layout>
-      <div>Hello World - Testing</div>
-      <Hero />
-      <Services />
-      <Gallery />
-      <Reviews />
-      <FAQ />
-      <Quote />
-      <Footer />
-    </Layout>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
+        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+      </div>
+    </div>
   );
 };
 
