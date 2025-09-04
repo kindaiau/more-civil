@@ -9,8 +9,11 @@ import Quote from '@/components/Quote'
 import Footer from '@/components/Footer'
 
 const Index = () => {
+  console.log('Index component rendering...');
+  
   return (
     <Layout>
+      <div>Hello World - Testing</div>
       <Hero />
       <Services />
       <Gallery />
