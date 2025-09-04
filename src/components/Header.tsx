@@ -14,8 +14,8 @@ export default function Header() {
             src="/more-civil-transparent-logo.svg"
             alt="More Civil"
             className="h-30 w-auto -ml-14 bg-transparent"
-            width="500"
-            height="200"
+            width="600"
+            height="250"
             decoding="async"
           />
           
