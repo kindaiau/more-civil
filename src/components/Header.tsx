@@ -27,10 +27,10 @@ export default function Header() {
           <a href="/blog" className="text-black hover:text-[#00B4D8] transition-colors">Blog</a>
           <a href="#faq" className="text-black hover:text-[#00B4D8] transition-colors">FAQ</a>
           <a href="#quote" className="text-black hover:text-[#00B4D8] transition-colors">Quote</a>
-          <a href="#contact" className="bg-gradient-to-r from-[#00B4D8] to-white text-black font-semibold px-6 py-3 rounded-xl shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A]">Contact</a>
+          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-gradient-to-r from-[#00B4D8] to-white text-black p-1 border-2 border-[#0B1F2A] rounded-lg shadow-sm h-30 w-auto flex items-center justify-center" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-[#00B4D8] hover:bg-[#00A3C4] text-white p-1 rounded-lg h-30 w-auto flex items-center justify-center transition-all duration-300" aria-label="Toggle menu">
           Menu
         </button>
       </div>

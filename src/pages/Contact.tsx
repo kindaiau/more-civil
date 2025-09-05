@@ -110,7 +110,7 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button className="w-full" size="lg">
+                <Button className="w-full bg-[#00B4D8] hover:bg-[#00A3C4] text-white" size="lg">
                   Send Quote Request
                 </Button>
               </form>
@@ -166,7 +166,7 @@ const Contact = () => {
                   Need immediate water delivery or urgent civil works? 
                   Our emergency response team is available 24/7.
                 </p>
-                <Button variant="destructive" className="w-full" size="lg">
+                <Button className="w-full bg-[#00B4D8] hover:bg-[#00A3C4] text-white" size="lg">
                   📞 Emergency Hotline
                 </Button>
               </Card>

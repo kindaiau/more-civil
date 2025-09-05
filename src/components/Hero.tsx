@@ -38,8 +38,8 @@ export default function Hero() {
             <p className="text-sm text-slate-500 mt-2">Fully insured • SWMS available • Local SA crew</p>
           </div>
           <div className="mt-8 flex gap-4 justify-center">
-            <a href="#quote" className="bg-gradient-to-r from-[#00B4D8] to-white text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A]">Request a Quote</a>
-            <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] px-6 py-3 rounded-xl hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
+            <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Request a Quote</a>
+            <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Book Water</a>
           </div>
           <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-slate-50 px-5 py-4">
             <span className="text-slate-600 text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
