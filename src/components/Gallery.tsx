@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import waterTruck from '@/assets/water-truck.png';
 
 const projectImages = [
-  { id: 1, src: waterTruck, alt: 'More Civil water truck delivering water across South Australia', title: 'Water Delivery Services' },
+  { id: 1, src: '/lovable-uploads/d341c0dc-94e7-4cb8-ad94-3fccdfa7cc00.png', alt: 'More Civil construction site with Bobcat and excavators working', title: 'Construction & Earthworks' },
+  { id: 2, src: '/lovable-uploads/4abbad75-252f-4ca8-a18e-af2dfe521a47.png', alt: 'More Civil water truck for delivery services', title: 'Water Delivery Services' },
+  { id: 3, src: '/lovable-uploads/8089b6e7-519a-4d94-b5a0-a34ed721ca7e.png', alt: 'More Civil excavator on trailer for transport', title: 'Heavy Machinery Transport' },
+  { id: 4, src: '/lovable-uploads/85f3645a-0c6c-4c36-9032-4b1e908cccfe.png', alt: 'More Civil semi-trailer and water truck fleet', title: 'Fleet Operations' },
 ];
 
 export default function Gallery() {
@@ -13,7 +15,7 @@ export default function Gallery() {
     <section id="projects" className="py-32 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-10">
         <h2 className="reveal font-extrabold text-3xl mb-12 text-center text-foreground" style={{fontFamily:'Montserrat'}}>
-          Recent Projects
+          More civil at Work
         </h2>
         
         <div className="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
