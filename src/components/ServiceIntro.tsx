@@ -85,7 +85,7 @@ const ServiceIntro = () => {
             <div className="pt-4">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl shadow-lg transition-all duration-300"
+                className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300"
                 onClick={() => window.location.href = '/contact'}
               >
                 Get A Quote
