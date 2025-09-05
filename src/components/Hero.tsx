@@ -41,9 +41,8 @@ export default function Hero() {
             <a href="#quote" className="bg-gradient-to-r from-[#00B4D8] to-white text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A]">Request a Quote</a>
             <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] px-6 py-3 rounded-xl hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
           </div>
-          <div className="mt-6 inline-flex items-center gap-3 rounded-xl border-2 border-[#00B4D8] bg-slate-50 px-5 py-4">
-            <span className="text-[#00B4D8] font-extrabold bg-[#e0f7ff] rounded-full px-3 py-1 text-base">Community</span>
-            <span className="text-slate-600 text-base"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
+          <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-slate-50 px-5 py-4">
+            <span className="text-slate-600 text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
           </div>
         </div>
       </div>
