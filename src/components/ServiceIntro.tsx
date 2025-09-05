@@ -26,7 +26,7 @@ const ServiceIntro = () => {
                    style={{animationDelay: "1s", animationDuration: "3s"}}></div>
               
               {/* Subtle water flow effect */}
-              <div className="absolute top-44 left-40 w-16 h-1 bg-gradient-to-r from-primary/30 to-transparent rounded-full animate-pulse"></div>
+              <div className="absolute top-44 left-44 w-20 h-2 bg-gradient-to-r from-primary/50 via-primary/30 to-transparent rounded-full animate-pulse"></div>
             </div>
           </div>
 
