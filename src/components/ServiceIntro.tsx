@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import waterTruckIcon from "@/assets/water-truck-icon.svg";
+import waterTruckIcon from "@/assets/water-truck.png";
 
 const ServiceIntro = () => {
   return (
