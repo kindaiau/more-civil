@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { removeBackground } from "@/lib/backgroundRemoval";
 const waterTruckIcon = "/lovable-uploads/b2ca26f9-7f6c-4049-a235-e22644292355.png";
 
 const ServiceIntro = () => {
+  const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  useEffect(() => {
+    const processImage = async () => {
+      setIsProcessing(true);
+      try {
+        // Load the original image
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = async () => {
+          try {
+            const blob = await removeBackground(img);
+            const url = URL.createObjectURL(blob);
+            setProcessedImageUrl(url);
+          } catch (error) {
+            console.error('Failed to remove background:', error);
+            setProcessedImageUrl(waterTruckIcon); // Fallback to original
+          } finally {
+            setIsProcessing(false);
+          }
+        };
+        img.onerror = () => {
+          console.error('Failed to load image');
+          setProcessedImageUrl(waterTruckIcon); // Fallback to original
+          setIsProcessing(false);
+        };
+        img.src = waterTruckIcon;
+      } catch (error) {
+        console.error('Error processing image:', error);
+        setProcessedImageUrl(waterTruckIcon); // Fallback to original
+        setIsProcessing(false);
+      }
+    };
+
+    processImage();
+  }, []);
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -12,9 +50,10 @@ const ServiceIntro = () => {
             <div className="relative">
               {/* Water truck icon */}
               <img 
-                src={waterTruckIcon} 
+                src={processedImageUrl || waterTruckIcon} 
                 alt="Water delivery truck"
                 className="w-80 h-80 object-contain"
+                style={{ opacity: isProcessing ? 0.7 : 1 }}
               />
               
               {/* Animated water drops */}
