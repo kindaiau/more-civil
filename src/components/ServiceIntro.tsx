@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import waterTruckIcon from "@/assets/watertruck.webp";
+const waterTruckIcon = "/lovable-uploads/b2ca26f9-7f6c-4049-a235-e22644292355.png";
 
 const ServiceIntro = () => {
   return (
