@@ -89,7 +89,7 @@ const projectData = {
   'plant-loading': {
     title: 'Plant Loading',
     summary: 'On/Ramp Safety',
-    image: '/src/assets/projects/plant-loading-safety.jpg',
+    image: '/placeholder-plant-loading.jpg', // Placeholder until user uploads
     alt: 'Plant loading with on-ramp safety protocols',
     description: 'Specialized plant loading operations with comprehensive on-ramp safety protocols. Our team ensures all heavy machinery is safely loaded and transported according to industry best practices.',
     details: {

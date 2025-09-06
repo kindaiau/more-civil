@@ -41,7 +41,7 @@ const projects = [
     id: 'plant-loading',
     title: 'Plant Loading',
     summary: 'On/Ramp Safety',
-    image: '/src/assets/projects/plant-loading-safety.jpg', // Will be uploaded
+    image: '/placeholder-plant-loading.jpg', // Placeholder until user uploads
     alt: 'Plant loading with on-ramp safety protocols'
   }
 ];
