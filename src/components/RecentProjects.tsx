@@ -2,46 +2,42 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-// Import project images
-import bobcatImage from '@/assets/projects/morecivilbobcat.webp';
-import tipperImage from '@/assets/projects/more-civil-tipper.webp';
-import pipelineImage from '@/assets/projects/more-civil-nairne-pipeline-project.webp';
-import semiTipperImage from '@/assets/projects/semi-and-tipper.webp';
+// Project images from public directory
 
 const projects = [
   {
     id: 'nairne-pipeline',
     title: 'Water Cart Services',
     summary: 'Residential Streetscape Dust Control',
-    image: pipelineImage,
+    image: '/images/projects/more-civil-nairne-pipeline-project.webp',
     alt: 'Water cart providing dust control for residential streetscape in Nairne pipeline project'
   },
   {
     id: 'bobcat-excavators',
     title: 'Trenching and Services',
     summary: 'Bobcat + Excavators',
-    image: bobcatImage,
+    image: '/images/projects/morecivilbobcat.webp',
     alt: 'Bobcat and excavators performing trenching and utility services'
   },
   {
     id: 'tipper-bulk-haul',
     title: '6-Wheel Tipper',
     summary: 'Bulk Haul and Spoil',
-    image: tipperImage,
+    image: '/images/projects/more-civil-tipper.webp',
     alt: '6-wheel tipper truck for bulk hauling and spoil removal'
   },
   {
     id: 'heavy-haul',
     title: 'Prime Mover + Tipper',
     summary: 'Heavy Haul',
-    image: semiTipperImage,
+    image: '/images/projects/semi-and-tipper.webp',
     alt: 'Prime mover with tipper for heavy haul operations'
   },
   {
     id: 'plant-loading',
     title: 'Plant Loading',
     summary: 'On/Ramp Safety',
-    image: '/placeholder-plant-loading.jpg', // Placeholder until user uploads
+    image: '/images/projects/plant-loading.webp',
     alt: 'Plant loading with on-ramp safety protocols'
   }
 ];

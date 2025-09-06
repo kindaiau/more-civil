@@ -3,17 +3,13 @@ import { ArrowLeft, Calendar, MapPin, Truck } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-// Import project images
-import bobcatImage from '@/assets/projects/morecivilbobcat.webp';
-import tipperImage from '@/assets/projects/more-civil-tipper.webp';
-import pipelineImage from '@/assets/projects/more-civil-nairne-pipeline-project.webp';
-import semiTipperImage from '@/assets/projects/semi-and-tipper.webp';
+// Project images from public directory
 
 const projectData = {
   'nairne-pipeline': {
     title: 'Water Cart Services',
     summary: 'Residential Streetscape Dust Control',
-    image: pipelineImage,
+    image: '/images/projects/more-civil-nairne-pipeline-project.webp',
     alt: 'Water cart providing dust control for residential streetscape in Nairne pipeline project',
     description: 'Our water cart services provided essential dust control for the Nairne pipeline project, ensuring minimal disruption to residential areas. Our team delivered consistent, reliable water application to keep dust levels manageable during construction activities.',
     details: {
@@ -32,7 +28,7 @@ const projectData = {
   'bobcat-excavators': {
     title: 'Trenching and Services',
     summary: 'Bobcat + Excavators',
-    image: bobcatImage,
+    image: '/images/projects/morecivilbobcat.webp',
     alt: 'Bobcat and excavators performing trenching and utility services',
     description: 'Precision trenching and utility installation using our fleet of Bobcats and excavators. This project required careful excavation around existing infrastructure while maintaining access for residents and businesses.',
     details: {
@@ -51,7 +47,7 @@ const projectData = {
   'tipper-bulk-haul': {
     title: '6-Wheel Tipper',
     summary: 'Bulk Haul and Spoil',
-    image: tipperImage,
+    image: '/images/projects/more-civil-tipper.webp',
     alt: '6-wheel tipper truck for bulk hauling and spoil removal',
     description: 'Efficient bulk hauling and spoil removal using our 6-wheel tipper trucks. This project required careful coordination to ensure continuous material flow while maintaining site safety and minimizing traffic disruption.',
     details: {
@@ -70,7 +66,7 @@ const projectData = {
   'heavy-haul': {
     title: 'Prime Mover + Tipper',
     summary: 'Heavy Haul',
-    image: semiTipperImage,
+    image: '/images/projects/semi-and-tipper.webp',
     alt: 'Prime mover with tipper for heavy haul operations',
     description: 'Heavy haul operations using our prime mover and tipper combination for large-scale material transport. This project required specialized equipment and experienced operators to handle oversized loads safely.',
     details: {
@@ -89,7 +85,7 @@ const projectData = {
   'plant-loading': {
     title: 'Plant Loading',
     summary: 'On/Ramp Safety',
-    image: '/placeholder-plant-loading.jpg', // Placeholder until user uploads
+    image: '/images/projects/plant-loading.webp',
     alt: 'Plant loading with on-ramp safety protocols',
     description: 'Specialized plant loading operations with comprehensive on-ramp safety protocols. Our team ensures all heavy machinery is safely loaded and transported according to industry best practices.',
     details: {

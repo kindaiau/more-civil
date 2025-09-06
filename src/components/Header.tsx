@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SkipLink from './SkipLink';
+import AnimatedLogo from './AnimatedLogo';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -17,15 +18,7 @@ export default function Header() {
       <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3 mx-[12px] py-0 my-0 px-[30px]">
-          <img
-            src="/more-civil-transparent-logo.svg"
-            alt="More Civil"
-            className="h-30 w-auto -ml-14 bg-transparent"
-            width="600"
-            height="250"
-            decoding="async"
-          />
-          
+          <AnimatedLogo className="-ml-14 bg-transparent" />
         </a>
 
         <nav className="hidden md:flex items-center gap-6 text-foreground font-semibold">
