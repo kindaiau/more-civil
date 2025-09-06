@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import accreditations from "@/assets/accreditations.png";
+import accreditations from "@/assets/accreditations.webp";
 
 const About = () => {
   return (

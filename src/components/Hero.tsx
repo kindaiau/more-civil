@@ -29,7 +29,7 @@ export default function Hero() {
           {/* Accreditations moved from footer */}
           <div className="mt-6 mb-8">
             <img
-              src="/accreditations.png"
+              src="/accreditations.webp"
               alt="Industry certifications and memberships"
               className="h-48 w-auto mx-auto opacity-90"
               width="384"
