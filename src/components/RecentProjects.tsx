@@ -99,7 +99,7 @@ export default function RecentProjects() {
         <div className="text-center mt-12">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300"
           >
             View All Projects
             <ArrowRight size={20} />
