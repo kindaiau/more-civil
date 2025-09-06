@@ -1,43 +1,31 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface AnimatedLogoProps {
   className?: string;
 }
 
 export default function AnimatedLogo({ className = "" }: AnimatedLogoProps) {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoError, setVideoError] = useState(false);
+  const [gifLoaded, setGifLoaded] = useState(false);
+  const [gifError, setGifError] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Check for reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
-    
+
     const handleChange = (e: MediaQueryListEvent) => {
       setPrefersReducedMotion(e.matches);
     };
-    
+
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const handleVideoLoad = () => {
-    setVideoLoaded(true);
-    if (videoRef.current && !prefersReducedMotion) {
-      videoRef.current.play().catch(() => {
-        setVideoError(true);
-      });
-    }
-  };
+  const handleGifLoad = () => setGifLoaded(true);
+  const handleGifError = () => setGifError(true);
 
-  const handleVideoError = () => {
-    setVideoError(true);
-  };
-
-  // Always show static logo if reduced motion is preferred or video fails
-  const showStaticLogo = prefersReducedMotion || videoError || !videoLoaded;
+  // Show static logo for reduced motion, load/error, or while GIF is loading
+  const showStaticLogo = prefersReducedMotion || gifError || !gifLoaded;
 
   return (
     <div className={`relative ${className}`}>
@@ -52,24 +40,20 @@ export default function AnimatedLogo({ className = "" }: AnimatedLogoProps) {
         height="250"
         decoding="async"
       />
-      
-      {/* Animated WebM video - only if motion is allowed */}
+
+      {/* Animated GIF - only if motion is allowed */}
       {!prefersReducedMotion && (
-        <video
-          ref={videoRef}
+        <img
+          src="/brand/morecivil-logo.gif"
           className={`absolute inset-0 h-14 md:h-16 w-auto transition-opacity duration-300 ${
-            videoLoaded && !videoError ? 'opacity-100' : 'opacity-0'
+            gifLoaded && !gifError ? 'opacity-100' : 'opacity-0'
           }`}
-          poster="/brand/MORECIVILFINALLOWRES.png"
-          muted
-          loop
-          playsInline
-          onCanPlayThrough={handleVideoLoad}
-          onError={handleVideoError}
+          onLoad={handleGifLoad}
+          onError={handleGifError}
+          decoding="async"
           aria-hidden="true"
-        >
-          <source src="/brand/morecivil-logo.webm" type="video/webm" />
-        </video>
+          alt=""
+        />
       )}
     </div>
   );
