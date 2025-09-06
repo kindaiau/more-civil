@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ServiceIntro from "@/components/ServiceIntro";
 import Services from "@/components/Services";
+import RecentProjects from "@/components/RecentProjects";
 import ReviewsSection from "@/components/Reviews";
 import WaterQuality from "@/components/WaterQuality";
 const Gallery = lazy(() => import("@/components/Gallery"));
@@ -39,6 +40,7 @@ const Home = () => {
       <Hero />
       <ServiceIntro />
       <Services />
+      <RecentProjects />
       <Suspense fallback={null}>
         <Gallery />
       </Suspense>
