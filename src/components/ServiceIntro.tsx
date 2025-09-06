@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { removeBackground } from "@/lib/backgroundRemoval";
-const waterTruckIcon = "/lovable-uploads/b2ca26f9-7f6c-4049-a235-e22644292355.png";
+const waterTruckIcon = "/lovable-uploads/b2ca26f9-7f6c-4049-a235-e22644292355.webp";
 
 const ServiceIntro = () => {
   const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);

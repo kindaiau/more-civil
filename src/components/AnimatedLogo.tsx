@@ -60,7 +60,7 @@ export default function AnimatedLogo({ className = "" }: AnimatedLogoProps) {
           className={`absolute inset-0 h-14 md:h-16 w-auto transition-opacity duration-300 ${
             videoLoaded && !videoError ? 'opacity-100' : 'opacity-0'
           }`}
-          poster="/brand/MORECIVILFINALLOWRES.png"
+          // poster="/brand/MORECIVILFINALLOWRES.png" // Image missing - commented out
           muted
           loop
           playsInline

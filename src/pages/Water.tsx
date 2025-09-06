@@ -26,7 +26,7 @@ const Water = () => {
             
             <div className="media">
               <img
-                src="/water-truck.png"
+                src="/water-truck.webp"
                 alt="MORECIVIL water delivery truck"
                 className="max-w-full h-auto reveal tilt float"
                 width="800"
