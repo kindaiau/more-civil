@@ -8,7 +8,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 5);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -18,10 +18,10 @@ export default function Header() {
       <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center gap-3 mx-[12px] py-0 my-0 px-[30px]">
-          <AnimatedLogo className="-ml-14 bg-transparent" />
+          <AnimatedLogo className="-ml-14 bg-transparent" scrolled={scrolled} />
         </a>
 
-        <nav className="hidden md:flex items-center gap-6 text-foreground font-semibold">
+        <nav className={`hidden md:flex items-center gap-6 font-semibold ${scrolled ? 'text-foreground' : 'text-white drop-shadow-lg'}`}>
           <a href="#services" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-primary' : ''}`}>Services</a>
           <a href="#projects" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#projects' ? 'text-primary' : ''}`}>Projects</a>
           <a href="/blog" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-primary' : ''}`}>Blog</a>
