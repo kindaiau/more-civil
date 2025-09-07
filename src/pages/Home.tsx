@@ -18,6 +18,12 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    // Remove any existing script with the same ID first
+    const existingScript = document.getElementById("ld-localbusiness");
+    if (existingScript) {
+      existingScript.remove();
+    }
+
     const script = document.createElement("script");
     script.id = "ld-localbusiness";
     script.type = "application/ld+json";
@@ -31,7 +37,10 @@ const Home = () => {
     });
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      // Safe cleanup - check if the script still exists and has a parent
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
   return (
