@@ -5,11 +5,11 @@ interface AnimatedLogoProps {
 export default function AnimatedLogo({ className = "" }: AnimatedLogoProps) {
   return (
     <img
-      src="/MORECIVILFINALLOGOFORWEB.svg"
+      src="/more-civil-transparent-logo.svg"
       alt="More Civil"
-      className={`h-14 md:h-16 w-auto ${className}`}
-      width="2500"
-      height="1406"
+      className={`h-42 md:h-48 w-auto ${className}`}
+      width="605"
+      height="227"
       decoding="async"
     />
   );
