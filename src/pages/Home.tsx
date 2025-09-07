@@ -37,9 +37,15 @@ const Home = () => {
     });
     document.head.appendChild(script);
     return () => {
-      // Safe cleanup - check if the script still exists and has a parent
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
+      // Use the more reliable remove() method instead of removeChild()
+      try {
+        const scriptToRemove = document.getElementById("ld-localbusiness");
+        if (scriptToRemove) {
+          scriptToRemove.remove();
+        }
+      } catch (error) {
+        // Silently handle any removal errors
+        console.warn("Failed to remove JSON-LD script:", error);
       }
     };
   }, []);
