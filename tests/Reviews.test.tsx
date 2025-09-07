@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
-import ReviewsSection from '../src/components/Reviews';
+import Reviews from '../src/components/Reviews';
 
 describe('Reviews component', () => {
   it('renders fetched reviews', async () => {
@@ -8,22 +8,21 @@ describe('Reviews component', () => {
       Promise.resolve({
         json: () =>
           Promise.resolve({
-            rating: 5,
-            user_ratings_total: 10,
             reviews: [
               {
                 author_name: 'Jane',
                 profile_photo_url: 'avatar.jpg',
                 rating: 5,
                 text: 'Great work!',
-                relative_time_description: 'a day ago',
+                time: 123,
+                original_url_to_review: 'https://example.com',
+                photo: { thumb: 'thumb.jpg', full: 'full.jpg' },
               },
             ],
-            placePhotoRef: null,
           }),
       })
     );
-    const { findByText, container } = render(<ReviewsSection />);
+    const { findByText, container } = render(<Reviews />);
     await findByText('Great work!');
     expect(container).toMatchSnapshot();
   });

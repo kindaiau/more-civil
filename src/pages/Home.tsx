@@ -1,11 +1,8 @@
 import { useEffect, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ServiceIntro from "@/components/ServiceIntro";
 import Services from "@/components/Services";
-import RecentProjects from "@/components/RecentProjects";
-import ReviewsSection from "@/components/Reviews";
-import WaterQuality from "@/components/WaterQuality";
+import Reviews from "@/components/Reviews";
 const Gallery = lazy(() => import("@/components/Gallery"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Quote = lazy(() => import("@/components/Quote"));
@@ -16,42 +13,21 @@ const Home = () => {
     mountReveal();
     mountTilt();
   }, []);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.id = "ld-localbusiness";
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: "More Civil",
-      address: { "@type": "PostalAddress", addressRegion: "SA", addressCountry: "AU" },
-      url: "https://more-civil.lovable.app/",
-      aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "3" },
-    });
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
   return (
     <>
       <Header />
       <Hero />
-      <ServiceIntro />
       <Services />
-      <RecentProjects />
       <Suspense fallback={null}>
         <Gallery />
       </Suspense>
-      <ReviewsSection />
+      <Reviews />
       <Suspense fallback={null}>
         <FAQ />
       </Suspense>
       <Suspense fallback={null}>
         <Quote />
       </Suspense>
-      <WaterQuality />
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
@@ -63,7 +39,7 @@ const Home = () => {
             .querySelector("#quote")
             ?.scrollIntoView({ behavior: "smooth" })
         }
-        className="fixed right-6 bottom-6 z-50 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg"
+        className="fixed right-6 bottom-6 z-50 bg-gradient-to-r from-[#00B4D8] to-white text-[#0B1F2A] font-semibold rounded-xl shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A] mx-0 px-0 my-[31px] py-[6px]"
       >
         Request a Quote
       </button>

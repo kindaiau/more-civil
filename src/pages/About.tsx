@@ -152,11 +152,11 @@ const About = () => {
         <div className="container text-center">
           <h2 className="mb-8">Certifications & Accreditations</h2>
           <img
-            src="/accreditations-optimized.webp"
+            src={accreditations}
             alt="MORECIVIL accreditations - South Australia, AWA, Department for Environment and Water"
             className="mx-auto max-w-full h-auto opacity-80 mb-8"
-            width="384"
-            height="192"
+            width="800"
+            height="512"
             loading="lazy"
             decoding="async"
           />

@@ -3,12 +3,12 @@ import { useState } from 'react';
 function QA({q, a}:{q:string; a:string}) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-border bg-card rounded-xl mb-3 overflow-hidden shadow-sm">
-      <button onClick={()=>setOpen(!open)} className="w-full text-left px-6 py-4 font-bold flex items-center justify-between text-card-foreground hover:bg-muted transition-colors">
+    <div className="reveal border border-slate-200 bg-white rounded-xl mb-3 overflow-hidden shadow-sm">
+      <button onClick={()=>setOpen(!open)} className="w-full text-left px-6 py-4 font-bold flex items-center justify-between hover:bg-slate-50 transition-colors">
         {q} <span className={`transition-transform ${open ? 'rotate-45' : ''}`}>+</span>
       </button>
       <div className={`px-6 overflow-hidden transition-[max-height] duration-300 ${open ? 'max-h-60 pb-4' : 'max-h-0'}`}>
-        <p className="text-muted-foreground">{a}</p>
+        <p className="text-slate-700">{a}</p>
       </div>
     </div>
   );
@@ -16,9 +16,9 @@ function QA({q, a}:{q:string; a:string}) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-32 bg-secondary/5">
+    <section id="faq" className="py-32 bg-white">
       <div className="max-w-3xl mx-auto px-10">
-        <h2 className="font-extrabold text-3xl mb-8 text-center text-foreground" style={{fontFamily:'Montserrat'}}>FAQs</h2>
+        <h2 className="reveal font-extrabold text-3xl mb-8 text-center" style={{fontFamily:'Montserrat'}}>FAQs</h2>
         <QA q="Do you deliver potable water?" a="Yes. We supply potable and non-potable water and can advise the best option for your job." />
         <QA q="How much can you deliver per load?" a="2,000 L trailers and 8,000 L / 13,000 L / 17,500 L trucks. Multiple loads can be scheduled for large fills." />
         <QA q="Do you handle tight access?" a="Yes. Our operators plan access and safety on every job, including tight sites." />

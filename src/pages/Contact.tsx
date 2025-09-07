@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   return (
@@ -37,11 +38,83 @@ const Contact = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="section" id="main-content">
+      <section className="section">
         <div className="container">
           <div className="grid grid-2">
             {/* Contact Form */}
-            <ContactForm />
+            <Card className="p-6">
+              <h2 className="mb-6">Request a Quote</h2>
+              <form className="space-y-4">
+                <div className="grid grid-2">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                      First Name *
+                    </label>
+                    <Input id="firstName" placeholder="John" required />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                      Last Name *
+                    </label>
+                    <Input id="lastName" placeholder="Smith" required />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email Address *
+                  </label>
+                  <Input id="email" type="email" placeholder="john@example.com" required />
+                </div>
+                
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                    Phone Number *
+                  </label>
+                  <Input id="phone" type="tel" placeholder="0400 000 000" required />
+                </div>
+                
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium mb-2">
+                    Service Required *
+                  </label>
+                  <select 
+                    id="service" 
+                    className="w-full p-3 border border-input rounded-lg bg-background"
+                    required
+                  >
+                    <option value="">Select a service...</option>
+                    <option value="water-delivery">Water Delivery</option>
+                    <option value="civil-works">Civil Works</option>
+                    <option value="excavation">Excavation</option>
+                    <option value="emergency">Emergency Service</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label htmlFor="location" className="block text-sm font-medium mb-2">
+                    Project Location
+                  </label>
+                  <Input id="location" placeholder="Adelaide, SA" />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Project Details
+                  </label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Please describe your project requirements, timeline, and any specific needs..."
+                    rows={4}
+                  />
+                </div>
+                
+                <Button className="w-full" size="lg">
+                  Send Quote Request
+                </Button>
+              </form>
+            </Card>
 
             {/* Contact Details */}
             <div className="space-y-6">
@@ -93,7 +166,7 @@ const Contact = () => {
                   Need immediate water delivery or urgent civil works? 
                   Our emergency response team is available 24/7.
                 </p>
-                <Button className="w-full bg-[#00B4D8] hover:bg-[#00A3C4] text-white" size="lg">
+                <Button variant="destructive" className="w-full" size="lg">
                   📞 Emergency Hotline
                 </Button>
               </Card>

@@ -1,13 +1,13 @@
 export default function Hero() {
-  return <section id="home" className="relative bg-white text-slate-900 overflow-hidden">
+  return <section id="home" className="relative bg-white text-slate-900 overflow-hidden pt-20">
       {/* Hero Image directly under header with light blue background */}
-      <div className="w-full bg-gradient-to-r from-[#00B4D8] to-white pt-20">
+      <div className="w-full bg-gradient-to-r from-[#00B4D8] to-white">
         <img
-          src="/more-civil-hero-optimized.webp"
+          src="/more-civil-hero-image.svg"
           alt="More Civil hero image"
           className="w-full h-auto"
-          width="1200"
-          height="675"
+          width="454"
+          height="170"
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -25,24 +25,13 @@ export default function Hero() {
           <p className="text-slate-600 mt-4 text-lg">
             Reliable water cart delivery and earthmoving across South Australia.
           </p>
-          
-          {/* Accreditations moved from footer */}
-          <div className="mt-6 mb-8">
-            <img
-              src="/accreditations-optimized.webp"
-              alt="Industry certifications and memberships"
-              className="h-48 w-auto mx-auto opacity-90"
-              width="384"
-              height="192"
-            />
-            <p className="text-sm text-slate-500 mt-2">Fully insured • SWMS available • Local SA crew</p>
-          </div>
           <div className="mt-8 flex gap-4 justify-center">
-            <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Request a Quote</a>
-            <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Book Water</a>
+            <a href="#quote" className="bg-gradient-to-r from-[#00B4D8] to-white text-[#0B1F2A] font-semibold px-6 py-3 rounded-xl shadow-lg hover:from-[#00A3C4] hover:to-white transition-all duration-300 border-2 border-[#0B1F2A]">Request a Quote</a>
+            <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] px-6 py-3 rounded-xl hover:bg-[#00B4D8] hover:text-white transition-colors">Book Water</a>
           </div>
-          <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-slate-50 px-5 py-4">
-            <span className="text-slate-600 text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
+          <div className="mt-6 inline-flex items-center gap-3 rounded-xl border-8 border-[#00B4D8] bg-slate-50 px-4 py-3">
+            <span className="text-[#00B4D8] font-extrabold bg-[#e0f7ff] rounded-full px-3 py-1 text-sm">Community</span>
+            <span className="text-slate-600"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
           </div>
         </div>
       </div>
