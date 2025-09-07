@@ -41,8 +41,8 @@ export default function Hero() {
             <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Request a Quote</a>
             <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Book Water</a>
           </div>
-          <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-slate-50 px-5 py-4">
-            <span className="text-slate-600 text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
+          <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-[#00B4D8] px-5 py-4">
+            <span className="text-white text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
           </div>
         </div>
       </div>
