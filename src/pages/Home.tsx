@@ -17,38 +17,7 @@ const Home = () => {
     mountTilt();
   }, []);
 
-  useEffect(() => {
-    // Remove any existing script with the same ID first
-    const existingScript = document.getElementById("ld-localbusiness");
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    const script = document.createElement("script");
-    script.id = "ld-localbusiness";
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: "More Civil",
-      address: { "@type": "PostalAddress", addressRegion: "SA", addressCountry: "AU" },
-      url: "https://more-civil.lovable.app/",
-      aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "3" },
-    });
-    document.head.appendChild(script);
-    return () => {
-      // Use the more reliable remove() method instead of removeChild()
-      try {
-        const scriptToRemove = document.getElementById("ld-localbusiness");
-        if (scriptToRemove) {
-          scriptToRemove.remove();
-        }
-      } catch (error) {
-        // Silently handle any removal errors
-        console.warn("Failed to remove JSON-LD script:", error);
-      }
-    };
-  }, []);
+  // JSON-LD structured data is now managed by Reviews component
   return (
     <>
       <Header />

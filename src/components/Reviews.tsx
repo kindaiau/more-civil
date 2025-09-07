@@ -51,7 +51,16 @@ export default function ReviewsSection() {
       } : {})
     })
     document.head.appendChild(script)
-    return () => { document.head.removeChild(script) }
+    return () => {
+      try {
+        const scriptToRemove = document.getElementById('ld-localbusiness')
+        if (scriptToRemove) {
+          scriptToRemove.remove()
+        }
+      } catch (error) {
+        console.warn('Failed to remove JSON-LD script:', error)
+      }
+    }
   }, [data])
 
   const placeImg = data.placePhotoRef
