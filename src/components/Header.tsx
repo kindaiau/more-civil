@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <>
       <SkipLink />
-      <header className={`fixed top-0 w-full z-50 transition-all ${shouldHaveWhiteBackground ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${shouldHaveWhiteBackground ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-white/20' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center">
           <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
