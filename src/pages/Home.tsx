@@ -5,7 +5,7 @@ import ServiceIntro from "@/components/ServiceIntro";
 import Services from "@/components/Services";
 import ReviewsSection from "@/components/Reviews";
 import WaterQuality from "@/components/WaterQuality";
-const Gallery = lazy(() => import("@/components/Gallery"));
+import Gallery from "@/components/Gallery";
 const FAQ = lazy(() => import("@/components/FAQ"));
 const Quote = lazy(() => import("@/components/Quote"));
 const Footer = lazy(() => import("@/components/Footer"));
@@ -23,9 +23,7 @@ const Home = () => {
       <Hero />
       <ServiceIntro />
       <Services />
-      <Suspense fallback={null}>
-        <Gallery />
-      </Suspense>
+      <Gallery />
       <ReviewsSection />
       <Suspense fallback={null}>
         <FAQ />
