@@ -10,8 +10,17 @@ export default function Header() {
   // Determine if header should have white background (not on home page OR scrolled)
   const shouldHaveWhiteBackground = scrolled || location.pathname !== '/';
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 5);
-    window.addEventListener('scroll', onScroll);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 5);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return <>
