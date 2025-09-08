@@ -69,8 +69,8 @@ export default function ReviewsSection() {
 
   return (
     <section className="py-16 bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">What our clients say</h2>
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground mb-8" style={{fontFamily: 'Montserrat'}}>What our clients say</h2>
         {typeof data.rating === 'number' && typeof data.user_ratings_total === 'number' && (
           <p className="mt-2 text-sm text-neutral-600">
             Google rating {data.rating.toFixed(1)} / 5 from {data.user_ratings_total} reviews

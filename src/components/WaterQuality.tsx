@@ -4,10 +4,7 @@ export default function WaterQuality() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-10 text-center">
-        <h2
-          className="font-extrabold mb-6 text-3xl"
-          style={{ fontFamily: "Montserrat" }}
-        >
+        <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground mb-8" style={{fontFamily: "Montserrat"}}>
           Water Quality Assurance
         </h2>
         <p className="text-slate-700">

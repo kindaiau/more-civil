@@ -14,7 +14,7 @@ export default function Gallery() {
   return (
     <section id="projects" className="py-32 bg-secondary/5">
       <div className="max-w-7xl mx-auto px-10">
-        <h2 className="reveal font-extrabold text-3xl mb-12 text-center text-foreground" style={{fontFamily:'Montserrat'}}>
+        <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground mb-8" style={{fontFamily:'Montserrat'}}>
           More civil at Work
         </h2>
         

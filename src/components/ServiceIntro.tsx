@@ -69,9 +69,9 @@ const ServiceIntro = () => {
           </div>
 
           {/* Right side - Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight text-center">
+              <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground" style={{fontFamily: 'Montserrat'}}>
                 Reliable Water Delivery & Civil Services
               </h2>
               

@@ -19,7 +19,7 @@ export default function Header() {
       <header className={`fixed top-0 w-full z-50 transition-all ${shouldHaveWhiteBackground ? 'bg-white/10 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
         <a href="#home" className="flex items-center">
-          <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
+          <AnimatedLogo className="bg-transparent ml-8" scrolled={shouldHaveWhiteBackground} />
         </a>
 
         <nav className={`hidden md:flex items-center gap-6 font-bold ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-black'}`} style={{
@@ -30,10 +30,10 @@ export default function Header() {
           <a href="/blog" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-blue-600' : ''}`}>Blog</a>
           <a href="#faq" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#faq' ? 'text-blue-600' : ''}`}>FAQ</a>
           <a href="#quote" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#quote' ? 'text-blue-600' : ''}`}>Quote</a>
-          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white text-yellow px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 mx-[32px]">Contact</a>
+          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white text-yellow px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 mr-8">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-bold px-4 py-2 rounded-md w-auto flex items-center justify-center transition-all duration-300 -mr-2" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-bold px-4 py-2 rounded-md w-auto flex items-center justify-center transition-all duration-300 mr-4" aria-label="Toggle menu">
           Menu
         </button>
       </div>

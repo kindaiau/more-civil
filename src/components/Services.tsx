@@ -21,9 +21,7 @@ const ServiceCard = ({
 export default function Services() {
   return <section id="services" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-10">
-        <h2 style={{
-        fontFamily: "Montserrat"
-      }} className="reveal font-extrabold mb-8 text-4xl px-0 py-0 my-0 mx-[38px] text-center">
+        <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground mb-8" style={{fontFamily: "Montserrat"}}>
           What we do
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">

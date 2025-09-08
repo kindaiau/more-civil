@@ -1,9 +1,11 @@
 export default function Quote() {
   return (
     <section id="quote" className="py-32 bg-secondary/5">
-      <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-10 text-center">
+        <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground mb-8" style={{fontFamily: 'Montserrat'}}>Get in Touch</h2>
+        <div className="grid md:grid-cols-2 gap-8">
         <div className="rounded-2xl border border-slate-200 bg-white shadow-lg p-10 h-full">
-          <h2 className="font-extrabold text-2xl mb-4" style={{fontFamily:'Montserrat'}}>Request a Quote</h2>
+          <h3 className="font-extrabold text-2xl mb-4" style={{fontFamily:'Montserrat'}}>Request a Quote</h3>
           <form onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}} className="space-y-8">
             <input required placeholder="Full Name" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
             <input required type="email" placeholder="Email" className="w-full p-3 border border-slate-300 rounded-lg focus:border-[#00B4D8] focus:outline-none focus:ring-1 focus:ring-[#00B4D8]"/>
@@ -23,7 +25,7 @@ export default function Quote() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-card shadow-lg p-10 h-full" id="contact">
-          <h2 className="font-extrabold text-2xl mb-4 text-card-foreground" style={{fontFamily:'Montserrat'}}>Book Water</h2>
+          <h3 className="font-extrabold text-2xl mb-4 text-card-foreground" style={{fontFamily:'Montserrat'}}>Book Water</h3>
           <form onSubmit={(e)=>{e.preventDefault(); alert('Demo — wire to email/form service in production');}} className="space-y-6">
             <input 
               required 
@@ -69,6 +71,7 @@ export default function Quote() {
               Book Delivery
             </button>
           </form>
+        </div>
         </div>
       </div>
     </section>
