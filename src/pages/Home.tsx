@@ -47,7 +47,7 @@ const Home = () => {
             .querySelector("#quote")
             ?.scrollIntoView({ behavior: "smooth" })
         }
-        className="fixed right-6 bottom-6 z-50 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg"
+        className="fixed right-6 bottom-6 z-50 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg"
       >
         Request a Quote
       </button>
