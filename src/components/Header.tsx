@@ -7,21 +7,26 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  
+  // Determine if header should have white background (not on home page OR scrolled)
+  const shouldHaveWhiteBackground = scrolled || location.pathname !== '/';
+  
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 5);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  
   return (
     <>
       <SkipLink />
-      <header className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 w-full z-50 transition-all ${shouldHaveWhiteBackground ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <a href="#home" className="flex items-center">
-          <AnimatedLogo className="bg-transparent" scrolled={scrolled} />
+          <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
         </a>
 
-        <nav className={`hidden md:flex items-center gap-6 font-semibold ${scrolled ? 'text-foreground' : 'text-white drop-shadow-lg'}`}>
+        <nav className={`hidden md:flex items-center gap-6 font-semibold ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-white drop-shadow-lg'}`}>
           <a href="#services" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-primary' : ''}`}>Services</a>
           <a href="#projects" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#projects' ? 'text-primary' : ''}`}>Projects</a>
           <a href="/blog" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-primary' : ''}`}>Blog</a>
@@ -30,19 +35,19 @@ export default function Header() {
           <a href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-[#00B4D8] hover:bg-[#00A3C4] text-white p-1 rounded-lg h-30 w-auto flex items-center justify-center transition-all duration-300" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-primary hover:bg-primary/90 text-primary-foreground p-1 rounded-lg h-30 w-auto flex items-center justify-center transition-all duration-300" aria-label="Toggle menu">
           Menu
         </button>
       </div>
 
       {/* mobile menu */}
-      {open && <div className="md:hidden px-6 pb-4 text-gray-900 space-y-2 bg-white border-t border-gray-200">
-          <a onClick={() => setOpen(false)} href="#services" className="block py-2 hover:text-[#00B4D8]">Services</a>
-          <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-[#00B4D8]">Projects</a>
-          <a onClick={() => setOpen(false)} href="/blog" className="block py-2 hover:text-[#00B4D8]">Blog</a>
-          <a onClick={() => setOpen(false)} href="#faq" className="block py-2 hover:text-[#00B4D8]">FAQ</a>
-          <a onClick={() => setOpen(false)} href="#quote" className="block py-2 hover:text-[#00B4D8]">Quote</a>
-          <a onClick={() => setOpen(false)} href="#contact" className="block py-2 hover:text-[#00B4D8]">Contact</a>
+      {open && <div className="md:hidden px-6 pb-4 text-foreground space-y-2 bg-white border-t border-border">
+          <a onClick={() => setOpen(false)} href="#services" className="block py-2 hover:text-primary">Services</a>
+          <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-primary">Projects</a>
+          <a onClick={() => setOpen(false)} href="/blog" className="block py-2 hover:text-primary">Blog</a>
+          <a onClick={() => setOpen(false)} href="#faq" className="block py-2 hover:text-primary">FAQ</a>
+          <a onClick={() => setOpen(false)} href="#quote" className="block py-2 hover:text-primary">Quote</a>
+          <a onClick={() => setOpen(false)} href="#contact" className="block py-2 hover:text-primary">Contact</a>
         </div>}
       </header>
     </>
