@@ -21,7 +21,7 @@ export default function Header() {
     <>
       <SkipLink />
       <header className={`fixed top-0 w-full z-50 transition-all ${shouldHaveWhiteBackground ? 'bg-white/10 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-10 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
         <a href="#home" className="flex items-center">
           <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
         </a>
