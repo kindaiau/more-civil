@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
           
           {/* Accreditations moved from footer */}
-          <div className="mt-6 mb-8">
+          <div className="mt-6 mb-8 my-[35px]">
             <img src="/accreditations.png" alt="Industry certifications and memberships" className="h-48 w-auto mx-auto opacity-90" width="384" height="192" />
             <p className="mt-2 font-bold text-sm text-center text-[#0c9dc0]">Fully insured • SWMS available • Local SA crew</p>
           </div>
