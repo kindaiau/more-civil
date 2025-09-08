@@ -61,8 +61,8 @@ export default function Services() {
                 <span className="text-primary">✓</span>
                 <span>Site cuts and preparation</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">✓</span>
+              <li className="flex items-start gap-2 rounded-sm bg-white">
+                <span className="text-primary mx-[18px]">✓</span>
                 <span>Drainage and trenching</span>
               </li>
               <li className="flex items-start gap-2">
