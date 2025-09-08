@@ -3,14 +3,13 @@ export default function Hero() {
       {/* Hero Image directly under header with light blue background */}
       <div className="w-full bg-gradient-to-r from-[#00B4D8] to-white pt-20">
         <img
-          src="/more-civil-hero-image.svg"
+          src="/public/more-civil-hero-image.svg"
           alt="More Civil hero image"
           className="w-full h-auto"
           width="454"
           height="170"
           loading="eager"
           fetchPriority="high"
-          decoding="async"
         />
       </div>
       
