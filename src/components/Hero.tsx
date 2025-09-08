@@ -11,10 +11,10 @@ export default function Hero() {
           <h1 className="font-extrabold leading-tight text-4xl md:text-5xl lg:text-6xl" style={{
           fontFamily: 'Montserrat'
         }}>
-            Water when you need it.<br /> Civil works you can trust.
+            Water delivered fast. Civil earthworks done right.
           </h1>
           <p className="text-slate-600 mt-4 text-lg font-semibold">
-            Reliable water cart delivery and earthmoving across South Australia.
+            Same-day water for homes, farms, and sites across South Australia.
           </p>
           
           {/* Accreditations moved from footer */}
@@ -22,9 +22,9 @@ export default function Hero() {
             <img src="/accreditations.png" alt="Industry certifications and memberships" className="h-48 w-auto mx-auto opacity-90" width="384" height="192" />
             <p className="mt-2 font-bold text-sm text-center text-[#0c9dc0]">Fully insured • SWMS available • Local SA crew</p>
           </div>
-          <div className="mt-8 flex gap-4 justify-center">
-            <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Request a Quote</a>
-            <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Book Water</a>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Book water</a>
+            <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Get earthworks quote</a>
           </div>
           <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-[#00B4D8] px-5 py-4">
             <span className="text-white text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
