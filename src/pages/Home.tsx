@@ -17,8 +17,7 @@ const Home = () => {
   }, []);
 
   // JSON-LD structured data is now managed by Reviews component
-  return (
-    <>
+  return <>
       <Header />
       <Hero />
       <ServiceIntro />
@@ -37,17 +36,11 @@ const Home = () => {
       </Suspense>
 
       {/* Floating CTA */}
-      <button
-        onClick={() =>
-          document
-            .querySelector("#quote")
-            ?.scrollIntoView({ behavior: "smooth" })
-        }
-        className="fixed right-6 bottom-6 z-50 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg"
-      >
+      <button onClick={() => document.querySelector("#quote")?.scrollIntoView({
+      behavior: "smooth"
+    })} className="fixed right-6 bottom-6 z-50 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 transition-all duration-300 shadow-lg text-center rounded-lg">
         Request a Quote
       </button>
-    </>
-  );
+    </>;
 };
 export default Home;
