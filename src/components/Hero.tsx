@@ -13,7 +13,7 @@ export default function Hero() {
         }}>
             Water when you need it.<br /> Civil works you can trust.
           </h1>
-          <p className="text-slate-600 mt-4 text-lg">
+          <p className="text-slate-600 mt-4 text-lg font-semibold">
             Reliable water cart delivery and earthmoving across South Australia.
           </p>
           
