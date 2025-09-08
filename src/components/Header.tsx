@@ -27,11 +27,11 @@ export default function Header() {
         </a>
 
         <nav className={`hidden md:flex items-center gap-6 font-semibold ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-white drop-shadow-lg'}`}>
-          <a href="#services" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-primary' : ''}`}>Services</a>
-          <a href="#projects" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#projects' ? 'text-primary' : ''}`}>Projects</a>
-          <a href="/blog" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-primary' : ''}`}>Blog</a>
-          <a href="#faq" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#faq' ? 'text-primary' : ''}`}>FAQ</a>
-          <a href="#quote" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#quote' ? 'text-primary' : ''}`}>Quote</a>
+          <a href="#services" className={`hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-blue-300' : ''}`}>Services</a>
+          <a href="#projects" className={`hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#projects' ? 'text-blue-300' : ''}`}>Projects</a>
+          <a href="/blog" className={`hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-blue-300' : ''}`}>Blog</a>
+          <a href="#faq" className={`hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#faq' ? 'text-blue-300' : ''}`}>FAQ</a>
+          <a href="#quote" className={`hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#quote' ? 'text-blue-300' : ''}`}>Quote</a>
           <a href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground">Contact</a>
         </nav>
 
