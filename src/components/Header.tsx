@@ -32,7 +32,7 @@ export default function Header() {
           <a href="/blog" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-blue-600' : ''}`}>Blog</a>
           <a href="#faq" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#faq' ? 'text-blue-600' : ''}`}>FAQ</a>
           <a href="#quote" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#quote' ? 'text-blue-600' : ''}`}>Quote</a>
-          <a href="#contact" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">Contact</a>
+          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">Contact</a>
         </nav>
 
         <button onClick={() => setOpen(v => !v)} className="md:hidden bg-primary hover:bg-primary/90 text-primary-foreground p-1 rounded-lg h-30 w-auto flex items-center justify-center transition-all duration-300" aria-label="Toggle menu">
