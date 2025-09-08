@@ -35,7 +35,7 @@ export default function Header() {
           <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-primary hover:bg-primary/90 text-primary-foreground p-1 rounded-lg h-30 w-auto flex items-center justify-center transition-all duration-300" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-sky-300 hover:bg-sky-400 text-white font-bold px-6 py-2 rounded-md w-auto flex items-center justify-center transition-all duration-300" aria-label="Toggle menu">
           Menu
         </button>
       </div>
