@@ -47,8 +47,8 @@ export default function Services() {
                 <span>Same-day delivery available</span>
               </li>
             </ul>
-            <div className="mt-4">
-              <a href="#contact" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">
+            <div className="mt-8">
+              <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-extrabold px-4 py-2 rounded-lg text-sm transition-colors">
                 Book Water
               </a>
             </div>
@@ -61,8 +61,8 @@ export default function Services() {
                 <span className="text-primary">✓</span>
                 <span>Site cuts and preparation</span>
               </li>
-              <li className="flex items-start gap-2 rounded-sm bg-white">
-                <span className="text-primary mx-[18px]">✓</span>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">✓</span>
                 <span>Drainage and trenching</span>
               </li>
               <li className="flex items-start gap-2">
@@ -74,8 +74,8 @@ export default function Services() {
                 <span>Fully insured operations</span>
               </li>
             </ul>
-            <div className="mt-4">
-              <a href="#quote" className="border-2 border-[#00B4D8] text-[#00B4D8] font-extrabold px-4 py-2 rounded-lg text-sm hover:bg-[#00B4D8] hover:text-white transition-colors">
+            <div className="mt-8">
+              <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-extrabold px-4 py-2 rounded-lg text-sm transition-colors">
                 Request Quote
               </a>
             </div>
