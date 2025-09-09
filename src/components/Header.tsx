@@ -31,9 +31,7 @@ export default function Header() {
           <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
         </a>
 
-        <nav className={`hidden md:flex items-center gap-6 font-medium ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-foreground'}`} style={{
-          textShadow: shouldHaveWhiteBackground ? 'none' : '1px 1px 2px rgba(255,255,255,0.5)'
-        }}>
+        <nav className="hidden md:flex items-center gap-6 font-semibold text-lg text-black">
           <a href="/water" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/water' ? 'text-primary font-semibold' : ''}`}>Water Delivery</a>
           <a href="/civil" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/civil' ? 'text-primary font-semibold' : ''}`}>Civil Works</a>
           <a href="#projects" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#projects' ? 'text-primary font-semibold' : ''}`}>Projects</a>
