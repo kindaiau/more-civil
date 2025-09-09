@@ -32,15 +32,14 @@ export default function Header() {
         </a>
 
         <nav className={`hidden md:flex items-center gap-6 font-bold ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-black'}`} style={{
-          textShadow: '1px 1px 2px rgba(255,255,255,0.5)',
-          WebkitTextStroke: '1px white'
+          textShadow: '1px 1px 2px rgba(255,255,255,0.5)'
         }}>
           <a href="#services" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-blue-600' : ''}`}>Services</a>
           <a href="#projects" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#projects' ? 'text-blue-600' : ''}`}>Projects</a>
           <a href="/blog" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-blue-600' : ''}`}>Blog</a>
           <a href="#faq" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#faq' ? 'text-blue-600' : ''}`}>FAQ</a>
           <a href="#quote" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#quote' ? 'text-blue-600' : ''}`}>Quote</a>
-          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white text-yellow font-normal px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 mr-8">Contact</a>
+          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white text-yellow px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 mr-8">Contact</a>
         </nav>
 
         <button onClick={() => setOpen(v => !v)} className="md:hidden bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-bold px-4 py-2 rounded-md w-auto flex items-center justify-center transition-all duration-300 mr-4" aria-label="Toggle menu">
