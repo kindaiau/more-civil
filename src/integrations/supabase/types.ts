@@ -68,6 +68,41 @@ export type Database = {
         }
         Relationships: []
       }
+      booking_approvals: {
+        Row: {
+          approval_notes: string | null
+          approval_status: string
+          approved_at: string
+          approved_by: string
+          id: string
+          quote_id: string
+        }
+        Insert: {
+          approval_notes?: string | null
+          approval_status: string
+          approved_at?: string
+          approved_by: string
+          id?: string
+          quote_id: string
+        }
+        Update: {
+          approval_notes?: string | null
+          approval_status?: string
+          approved_at?: string
+          approved_by?: string
+          id?: string
+          quote_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "booking_approvals_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "water_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       cash_flow_analysis: {
         Row: {
           analysis_date: string
@@ -525,6 +560,101 @@ export type Database = {
           total_amount?: number
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      water_bookings: {
+        Row: {
+          booking_reference: string
+          confirmed_date: string
+          confirmed_price: number
+          created_at: string
+          delivery_notes: string | null
+          delivery_status: string
+          id: string
+          quote_id: string
+          updated_at: string
+        }
+        Insert: {
+          booking_reference: string
+          confirmed_date: string
+          confirmed_price: number
+          created_at?: string
+          delivery_notes?: string | null
+          delivery_status?: string
+          id?: string
+          quote_id: string
+          updated_at?: string
+        }
+        Update: {
+          booking_reference?: string
+          confirmed_date?: string
+          confirmed_price?: number
+          created_at?: string
+          delivery_notes?: string | null
+          delivery_status?: string
+          id?: string
+          quote_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "water_bookings_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "water_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      water_quotes: {
+        Row: {
+          calculated_price: number
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          delivery_address: string
+          id: string
+          notes: string | null
+          preferred_date: string
+          price_breakdown: Json
+          quantity_kl: number
+          status: string
+          updated_at: string
+          water_type: string
+        }
+        Insert: {
+          calculated_price: number
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          delivery_address: string
+          id?: string
+          notes?: string | null
+          preferred_date: string
+          price_breakdown: Json
+          quantity_kl: number
+          status?: string
+          updated_at?: string
+          water_type: string
+        }
+        Update: {
+          calculated_price?: number
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          delivery_address?: string
+          id?: string
+          notes?: string | null
+          preferred_date?: string
+          price_breakdown?: Json
+          quantity_kl?: number
+          status?: string
+          updated_at?: string
+          water_type?: string
         }
         Relationships: []
       }
