@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Form,
   FormControl,
@@ -88,44 +89,38 @@ const ContactForm = () => {
     setLastSubmission(now);
     
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      // Call Supabase edge function instead of API route
+      const { data: result, error } = await supabase.functions.invoke('contact', {
+        body: data
       });
 
-      const result = await response.json();
-
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you within 2 hours.",
-        });
-        form.reset({
-          name: "",
-          company: "",
-          email: "",
-          phone: "",
-          message: "",
-          website: "",
-          timestamp: Date.now().toString(),
-        });
-      } else {
-        // Handle specific error messages from server
-        const errorMessage = result.message || "Failed to send message";
-        toast({
-          title: "Error sending message",
-          description: errorMessage,
-          variant: "destructive",
-        });
+      if (error) {
+        throw new Error(error.message);
       }
-    } catch (error) {
+
+      if (!result?.success) {
+        throw new Error(result?.error || "Failed to send message");
+      }
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 2 hours.",
+      });
+      
+      form.reset({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+        website: "",
+        timestamp: Date.now().toString(),
+      });
+    } catch (error: any) {
       console.error("Contact form error:", error);
       toast({
-        title: "Network error",
-        description: "Please check your connection and try again.",
+        title: "Error sending message",
+        description: error.message || "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {

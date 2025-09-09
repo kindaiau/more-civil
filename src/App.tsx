@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
 import ProjectDetail from "./components/ProjectDetail";
+import QuoteManagement from "./components/QuoteManagement";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/management" element={<QuoteManagement />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
