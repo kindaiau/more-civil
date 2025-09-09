@@ -12,8 +12,13 @@ All colors MUST be HSL.
     --navy: 193 82% 8%;         /* #0B1F2A */
     --blue-700: 224 76% 34%;    /* #1E3A8A */
     --aqua: 193 100% 42%;       /* #00B4D8 */
+    --aqua-light: 193 100% 52%; /* #20C4E8 */
+    --aqua-dark: 193 100% 32%;  /* #008BB0 */
     --black: 0 0% 4%;           /* #0A0A0A */
     --white: 0 0% 100%;         /* #FFFFFF */
+    --gray-50: 220 14% 96%;     /* #F8F9FA */
+    --gray-100: 220 13% 91%;    /* #E9ECEF */
+    --gray-600: 215 16% 47%;    /* #6C757D */
     
     /* Design System Colors */
     --background: 0 0% 100%;

@@ -31,30 +31,30 @@ export default function Header() {
           <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
         </a>
 
-        <nav className={`hidden md:flex items-center gap-6 font-medium ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-black'}`} style={{
-          textShadow: '1px 1px 2px rgba(255,255,255,0.5)'
+        <nav className={`hidden md:flex items-center gap-6 font-medium ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-foreground'}`} style={{
+          textShadow: shouldHaveWhiteBackground ? 'none' : '1px 1px 2px rgba(255,255,255,0.5)'
         }}>
-          <a href="#services" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-blue-600' : ''}`}>Services</a>
-          <a href="#projects" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#projects' ? 'text-blue-600' : ''}`}>Projects</a>
-          <a href="/blog" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.pathname === '/blog' ? 'text-blue-600' : ''}`}>Blog</a>
-          <a href="#faq" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#faq' ? 'text-blue-600' : ''}`}>FAQ</a>
-          <a href="#quote" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#quote' ? 'text-blue-600' : ''}`}>Quote</a>
-          <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white text-yellow px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 mr-8">Contact</a>
+          <a href="/water" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/water' ? 'text-primary font-semibold' : ''}`}>Water Delivery</a>
+          <a href="/civil" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/civil' ? 'text-primary font-semibold' : ''}`}>Civil Works</a>
+          <a href="#projects" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#projects' ? 'text-primary font-semibold' : ''}`}>Projects</a>
+          <a href="/about" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/about' ? 'text-primary font-semibold' : ''}`}>About</a>
+          <a href="#quote" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#quote' ? 'text-primary font-semibold' : ''}`}>Quote</a>
+          <a href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring mr-8">Contact</a>
         </nav>
 
-        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-bold px-4 py-2 rounded-md w-auto flex items-center justify-center transition-all duration-300 mr-4" aria-label="Toggle menu">
+        <button onClick={() => setOpen(v => !v)} className="md:hidden bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-2 rounded-lg w-auto flex items-center justify-center transition-all duration-300 mr-4" aria-label="Toggle menu">
           Menu
         </button>
       </div>
 
       {/* mobile menu */}
-      {open && <div className="md:hidden px-6 pb-4 text-foreground space-y-2 bg-white border-t border-border">
-          <a onClick={() => setOpen(false)} href="#services" className="block py-2 hover:text-primary">Services</a>
-          <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-primary">Projects</a>
-          <a onClick={() => setOpen(false)} href="/blog" className="block py-2 hover:text-primary">Blog</a>
-          <a onClick={() => setOpen(false)} href="#faq" className="block py-2 hover:text-primary">FAQ</a>
-          <a onClick={() => setOpen(false)} href="#quote" className="block py-2 hover:text-primary">Quote</a>
-          <a onClick={() => setOpen(false)} href="#contact" className="block py-2 hover:text-primary">Contact</a>
+      {open && <div className="md:hidden px-6 pb-6 pt-4 text-foreground space-y-3 bg-card border-t border-border shadow-lg">
+          <a onClick={() => setOpen(false)} href="/water" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Water Delivery</a>
+          <a onClick={() => setOpen(false)} href="/civil" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Civil Works</a>
+          <a onClick={() => setOpen(false)} href="#projects" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Projects</a>
+          <a onClick={() => setOpen(false)} href="/about" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">About</a>
+          <a onClick={() => setOpen(false)} href="#quote" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Quote</a>
+          <a onClick={() => setOpen(false)} href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-4 rounded-lg transition-colors font-semibold text-center block mt-4">Contact Us</a>
         </div>}
       </header>
     </>;

@@ -23,18 +23,18 @@ export default function Hero() {
             <p className="mt-2 font-bold text-sm text-center text-[#0c9dc0]">Fully insured • SWMS available • Local SA crew</p>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Book water</a>
-            <a href="#quote" className="bg-[#00B4D8] hover:bg-[#00A3C4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300">Get earthworks quote</a>
+            <a href="/water" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">Book Water Delivery</a>
+            <a href="/civil" className="bg-secondary hover:bg-secondary/80 text-secondary-foreground font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-primary/20 hover:border-primary/40">Get Civil Quote</a>
           </div>
-          <div className="mt-6 w-full rounded-xl border-2 border-[#00B4D8] bg-[#00B4D8] px-5 py-4">
-            <span className="text-white text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
+          <div className="mt-6 w-full rounded-xl border-2 border-primary bg-primary px-5 py-4 shadow-lg">
+            <span className="text-primary-foreground text-base block w-full text-center"><strong>$10</strong> donated to CFS or Koala Rescue SA for every <strong>15,000 L</strong> delivered.</span>
           </div>
         </div>
       </div>
 
       {/* Soft aqua glow */}
       <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl opacity-20" style={{
-      background: 'radial-gradient(closest-side, #00B4D8, transparent)'
+      background: 'radial-gradient(closest-side, hsl(var(--primary)), transparent)'
     }} />
     </section>;
 }
