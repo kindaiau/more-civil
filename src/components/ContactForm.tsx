@@ -40,6 +40,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lastSubmission, setLastSubmission] = useState<number>(0);
   const { toast } = useToast();
   
   const form = useForm<ContactFormData>({
@@ -61,7 +62,30 @@ const ContactForm = () => {
       return; // Silent fail for bots
     }
 
+    // Rate limiting check - prevent rapid submissions
+    const now = Date.now();
+    if (now - lastSubmission < 10000) { // 10 seconds between submissions
+      toast({
+        title: "Please wait",
+        description: "Please wait 10 seconds between submissions.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Additional client-side validation
+    const submissionTime = parseInt(data.timestamp);
+    if (now - submissionTime < 3000) { // Must spend at least 3 seconds on form
+      toast({
+        title: "Error",
+        description: "Please take your time filling out the form.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
+    setLastSubmission(now);
     
     try {
       const response = await fetch("/api/contact", {
@@ -72,19 +96,36 @@ const ContactForm = () => {
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         toast({
           title: "Message sent successfully!",
           description: "We'll get back to you within 2 hours.",
         });
-        form.reset();
+        form.reset({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          message: "",
+          website: "",
+          timestamp: Date.now().toString(),
+        });
       } else {
-        throw new Error("Failed to send message");
+        // Handle specific error messages from server
+        const errorMessage = result.message || "Failed to send message";
+        toast({
+          title: "Error sending message",
+          description: errorMessage,
+          variant: "destructive",
+        });
       }
     } catch (error) {
+      console.error("Contact form error:", error);
       toast({
-        title: "Error sending message",
-        description: "Please try again or call us directly.",
+        title: "Network error",
+        description: "Please check your connection and try again.",
         variant: "destructive",
       });
     } finally {

@@ -15,11 +15,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ message: 'Invalid request' });
   }
 
-  // Rate limiting check (basic timestamp validation)
+  // Enhanced rate limiting check
   const submissionTime = parseInt(timestamp);
   const now = Date.now();
   if (now - submissionTime < 3000) { // Less than 3 seconds = suspicious
-    return res.status(429).json({ message: 'Too fast' });
+    console.warn(`Suspicious fast submission from ${req.headers['x-forwarded-for'] || req.connection.remoteAddress}`);
+    return res.status(429).json({ message: 'Please take your time filling out the form' });
+  }
+
+  // Check for excessively old timestamps (possible replay attack)
+  if (now - submissionTime > 3600000) { // More than 1 hour old
+    return res.status(400).json({ message: 'Form session expired, please refresh and try again' });
   }
 
   // Validate required fields
@@ -80,9 +86,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Send email
     await transporter.sendMail(mailOptions);
 
+    // Log successful submission (without sensitive data)
+    console.log(`Contact form submitted successfully from ${sanitizedEmail} at ${new Date().toISOString()}`);
+
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ message: 'Error sending email' });
+    // Enhanced error logging
+    console.error('Contact form error:', {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      timestamp: new Date().toISOString(),
+      ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+    });
+    res.status(500).json({ message: 'Unable to send message at this time. Please try again later.' });
   }
 }

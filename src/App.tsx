@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SecurityHeaders from "./components/SecurityHeaders";
 import Home from "./pages/Home";
 import Water from "./pages/Water";
 import Civil from "./pages/Civil";
@@ -18,6 +19,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <SecurityHeaders />
       <Toaster />
       <Sonner />
       <BrowserRouter>
