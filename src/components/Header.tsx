@@ -32,11 +32,11 @@ export default function Header() {
         </a>
 
         <nav className="hidden md:flex items-center gap-6 font-semibold text-lg text-black">
-          <a href="/water" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/water' ? 'text-black font-bold' : ''}`}>Water Delivery</a>
-          <a href="/civil" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/civil' ? 'text-black font-bold' : ''}`}>Civil Works</a>
-          <a href="#projects" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#projects' ? 'text-black font-bold' : ''}`}>Projects</a>
-          <a href="/about" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/about' ? 'text-black font-bold' : ''}`}>About</a>
-          <a href="#quote" className={`hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#quote' ? 'text-black font-bold' : ''}`}>Quote</a>
+          <a href="/water" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/water' ? 'font-bold' : ''}`}>Water Delivery</a>
+          <a href="/civil" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/civil' ? 'font-bold' : ''}`}>Civil Works</a>
+          <a href="#projects" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#projects' ? 'font-bold' : ''}`}>Projects</a>
+          <a href="/about" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/about' ? 'font-bold' : ''}`}>About</a>
+          <a href="#quote" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#quote' ? 'font-bold' : ''}`}>Quote</a>
           <a href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring mr-8">Contact</a>
         </nav>
 
