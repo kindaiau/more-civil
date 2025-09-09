@@ -58,10 +58,6 @@ const Water = () => {
                 <li>✓ Event and festival supply</li>
                 <li>✓ Remote location delivery</li>
               </ul>
-              <div className="pricing-info">
-                <span className="price">From $180</span>
-                <span className="unit">per 10,000L load</span>
-              </div>
             </div>
             
             <div className="card">
@@ -73,10 +69,6 @@ const Water = () => {
                 <li>✓ Industrial process water</li>
                 <li>✓ Cleaning and washing</li>
               </ul>
-              <div className="pricing-info">
-                <span className="price">From $120</span>
-                <span className="unit">per 10,000L load</span>
-              </div>
             </div>
           </div>
         </div>
@@ -202,24 +194,6 @@ const Water = () => {
         .feature-icon {
           font-size: 3rem;
           margin-bottom: 1rem;
-        }
-        
-        .pricing-info {
-          display: flex;
-          align-items: baseline;
-          gap: 0.5rem;
-          margin-top: 1rem;
-        }
-        
-        .price {
-          font-size: 1.5rem;
-          font-weight: 800;
-          color: hsl(var(--primary));
-        }
-        
-        .unit {
-          color: hsl(var(--muted-foreground));
-          font-size: 0.9rem;
         }
         
         ul {
