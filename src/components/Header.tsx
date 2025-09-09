@@ -31,7 +31,7 @@ export default function Header() {
           <AnimatedLogo className="bg-transparent" scrolled={shouldHaveWhiteBackground} />
         </a>
 
-        <nav className={`hidden md:flex items-center gap-6 font-bold ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-black'}`} style={{
+        <nav className={`hidden md:flex items-center gap-6 font-medium ${shouldHaveWhiteBackground ? 'text-foreground' : 'text-black'}`} style={{
           textShadow: '1px 1px 2px rgba(255,255,255,0.5)'
         }}>
           <a href="#services" className={`hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 ${location.hash === '#services' ? 'text-blue-600' : ''}`}>Services</a>
