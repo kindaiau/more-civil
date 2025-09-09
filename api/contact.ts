@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
+import DOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -25,7 +27,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
+  // Validate input lengths
+  if (name.length > 100 || email.length > 100 || phone.length > 50 || message.length > 2000) {
+    return res.status(400).json({ message: 'Input too long' });
+  }
+
+  if (company && company.length > 200) {
+    return res.status(400).json({ message: 'Company name too long' });
+  }
+
   try {
+    // Initialize DOMPurify with JSDOM
+    const window = new JSDOM('').window;
+    const purify = DOMPurify(window as any);
+    
+    // Sanitize all inputs
+    const sanitizedName = purify.sanitize(name);
+    const sanitizedCompany = company ? purify.sanitize(company) : '';
+    const sanitizedEmail = purify.sanitize(email);
+    const sanitizedPhone = purify.sanitize(phone);
+    const sanitizedMessage = purify.sanitize(message.replace(/\n/g, '<br>'));
+
     // Create transporter (configure with your SMTP settings)
     const transporter = nodemailer.createTransporter({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
@@ -37,19 +59,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    // Email content
+    // Email content with sanitized inputs
     const mailOptions = {
       from: process.env.SMTP_USER,
       to: 'ops@morecivil.com.au',
-      subject: `[More Civil Website] New enquiry from ${name}`,
+      subject: `[More Civil Website] New enquiry from ${sanitizedName}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Name:</strong> ${sanitizedName}</p>
+        ${sanitizedCompany ? `<p><strong>Company:</strong> ${sanitizedCompany}</p>` : ''}
+        <p><strong>Email:</strong> ${sanitizedEmail}</p>
+        <p><strong>Phone:</strong> ${sanitizedPhone}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${sanitizedMessage}</p>
         <hr>
         <p><small>Submitted at: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Adelaide' })}</small></p>
       `,
