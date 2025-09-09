@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import morecivilbobcat from '@/assets/projects/morecivilbobcat.webp';
+import watertruck from '@/assets/water/watertruck.webp';
+import moreCivilTipper from '@/assets/projects/more-civil-tipper.webp';
+import semiAndTipper from '@/assets/projects/semi-and-tipper.webp';
+import nairnePipeline from '@/assets/projects/more-civil-nairne-pipeline-project.webp';
 
 const projectImages = [
-  { id: 1, src: '/lovable-uploads/d341c0dc-94e7-4cb8-ad94-3fccdfa7cc00.png', alt: 'More Civil construction site with Bobcat and excavators working', title: 'Construction & Earthworks' },
-  { id: 2, src: '/lovable-uploads/4abbad75-252f-4ca8-a18e-af2dfe521a47.png', alt: 'More Civil water truck for delivery services', title: 'Water Delivery Services' },
-  { id: 3, src: '/lovable-uploads/8089b6e7-519a-4d94-b5a0-a34ed721ca7e.png', alt: 'More Civil excavator on trailer for transport', title: 'Heavy Machinery Transport' },
-  { id: 4, src: '/lovable-uploads/85f3645a-0c6c-4c36-9032-4b1e908cccfe.png', alt: 'More Civil semi-trailer and water truck fleet', title: 'Fleet Operations' },
+  { id: 1, src: morecivilbobcat, alt: 'More Civil construction site with Bobcat and excavators working', title: 'Construction & Earthworks' },
+  { id: 2, src: watertruck, alt: 'More Civil water truck for delivery services', title: 'Water Delivery Services' },
+  { id: 3, src: moreCivilTipper, alt: 'More Civil excavator on trailer for transport', title: 'Heavy Machinery Transport' },
+  { id: 4, src: semiAndTipper, alt: 'More Civil semi-trailer and water truck fleet', title: 'Fleet Operations' },
+  { id: 5, src: nairnePipeline, alt: 'More Civil pipeline construction project', title: 'Infrastructure Projects' },
 ];
 
 export default function Gallery() {
@@ -32,6 +38,8 @@ export default function Gallery() {
                   alt={image.alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="384"
+                  height="288"
                 />
               </div>
               <div className="p-4">
