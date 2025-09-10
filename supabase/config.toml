@@ -2,3 +2,9 @@ project_id = "ccwbdarlfwmqbeftppzk"
 
 [functions.google-reviews]
 verify_jwt = false
+
+[functions.water-quote]
+verify_jwt = false
+
+[functions.contact]
+verify_jwt = false
