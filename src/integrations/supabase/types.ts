@@ -205,6 +205,54 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_submissions: {
+        Row: {
+          admin_notes: string | null
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          ip_address: string | null
+          message: string
+          name: string
+          phone: string
+          status: string
+          submitted_at: string
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          ip_address?: string | null
+          message: string
+          name: string
+          phone: string
+          status?: string
+          submitted_at?: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          admin_notes?: string | null
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          ip_address?: string | null
+          message?: string
+          name?: string
+          phone?: string
+          status?: string
+          submitted_at?: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       google_sheets_connections: {
         Row: {
           created_at: string

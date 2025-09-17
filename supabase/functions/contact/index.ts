@@ -1,7 +1,14 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.56.0';
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+
+// Initialize Supabase client
+const supabase = createClient(
+  Deno.env.get('SUPABASE_URL') ?? '',
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+);
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -102,6 +109,28 @@ const handler = async (req: Request): Promise<Response> => {
       message: sanitize(requestData.message).replace(/\n/g, '<br>')
     };
 
+    // Store submission in database
+    const { data: submission, error: dbError } = await supabase
+      .from('contact_submissions')
+      .insert({
+        name: requestData.name,
+        company: requestData.company || null,
+        email: requestData.email,
+        phone: requestData.phone,
+        message: requestData.message,
+        ip_address: req.headers.get('x-forwarded-for') || 'unknown',
+        user_agent: req.headers.get('user-agent') || 'unknown'
+      })
+      .select()
+      .single();
+
+    if (dbError) {
+      console.error('Database error:', dbError);
+      // Continue with email sending even if database fails
+    } else {
+      console.log('Contact submission stored:', submission?.id);
+    }
+
     // Send email to management
     const managementEmailHtml = `
       <h2>New Contact Form Submission</h2>
@@ -156,7 +185,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log(`Contact form submitted successfully from ${sanitizedData.email} at ${new Date().toISOString()}`);
 
     return new Response(
-      JSON.stringify({ success: true, message: "Message sent successfully" }),
+      JSON.stringify({ success: true }),
       {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders },
