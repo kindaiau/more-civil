@@ -129,7 +129,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 border-2 border-primary rounded-md">
       <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: 'Montserrat' }}>
         Request a Quote
       </h2>
