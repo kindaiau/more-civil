@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      audit_logs: {
+        Row: {
+          created_at: string | null
+          id: string
+          ip_address: unknown | null
+          operation: string
+          record_id: string | null
+          sensitive_data_accessed: Json | null
+          table_name: string
+          user_agent: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          ip_address?: unknown | null
+          operation: string
+          record_id?: string | null
+          sensitive_data_accessed?: Json | null
+          table_name: string
+          user_agent?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          ip_address?: unknown | null
+          operation?: string
+          record_id?: string | null
+          sensitive_data_accessed?: Json | null
+          table_name?: string
+          user_agent?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       bank_transactions: {
         Row: {
           bank_account_id: string | null
@@ -99,6 +135,13 @@ export type Database = {
             columns: ["quote_id"]
             isOneToOne: false
             referencedRelation: "water_quotes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_approvals_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "water_quotes_secure"
             referencedColumns: ["id"]
           },
         ]
@@ -677,6 +720,13 @@ export type Database = {
             referencedRelation: "water_quotes"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "water_bookings_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "water_quotes_secure"
+            referencedColumns: ["id"]
+          },
         ]
       }
       water_quotes: {
@@ -732,9 +782,79 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      water_quotes_secure: {
+        Row: {
+          calculated_price: number | null
+          created_at: string | null
+          customer_email: string | null
+          customer_email_masked: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          customer_phone_masked: string | null
+          delivery_address: string | null
+          id: string | null
+          notes: string | null
+          preferred_date: string | null
+          price_breakdown: Json | null
+          quantity_kl: number | null
+          status: string | null
+          updated_at: string | null
+          water_type: string | null
+        }
+        Insert: {
+          calculated_price?: number | null
+          created_at?: string | null
+          customer_email?: string | null
+          customer_email_masked?: never
+          customer_name?: string | null
+          customer_phone?: string | null
+          customer_phone_masked?: never
+          delivery_address?: string | null
+          id?: string | null
+          notes?: string | null
+          preferred_date?: string | null
+          price_breakdown?: Json | null
+          quantity_kl?: number | null
+          status?: string | null
+          updated_at?: string | null
+          water_type?: string | null
+        }
+        Update: {
+          calculated_price?: number | null
+          created_at?: string | null
+          customer_email?: string | null
+          customer_email_masked?: never
+          customer_name?: string | null
+          customer_phone?: string | null
+          customer_phone_masked?: never
+          delivery_address?: string | null
+          id?: string | null
+          notes?: string | null
+          preferred_date?: string | null
+          price_breakdown?: Json | null
+          quantity_kl?: number | null
+          status?: string | null
+          updated_at?: string | null
+          water_type?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
+      detect_suspicious_access: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          access_count: number
+          first_access: string
+          last_access: string
+          unique_records_accessed: number
+          user_id: string
+        }[]
+      }
+      encrypt_customer_data: {
+        Args: { data: string }
+        Returns: string
+      }
       ensure_admin_exists: {
         Args: Record<PropertyKey, never>
         Returns: boolean
@@ -761,6 +881,15 @@ export type Database = {
       refresh_job_cost_summary: {
         Args: Record<PropertyKey, never>
         Returns: undefined
+      }
+      verify_admin_with_audit: {
+        Args: {
+          operation: string
+          record_id?: string
+          sensitive_fields?: Json
+          table_name: string
+        }
+        Returns: boolean
       }
     }
     Enums: {
