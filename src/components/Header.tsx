@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { LogOut, User } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useAuth } from '@/hooks/useAuth';
 import SkipLink from './SkipLink';
 import AnimatedLogo from './AnimatedLogo';
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
 
   // Determine if header should have white background (not on home page OR scrolled)
   const shouldHaveWhiteBackground = scrolled || location.pathname !== '/';
@@ -39,6 +43,20 @@ export default function Header() {
           <a href="/blog" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/blog' ? 'font-bold' : ''}`}>Blog</a>
           <a href="#quote" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#quote' ? 'font-bold' : ''}`}>Quote</a>
           <a href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring mr-8">Contact</a>
+          {user ? (
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Welcome!</span>
+              <Button variant="outline" size="sm" onClick={signOut}>
+                <LogOut className="h-4 w-4 mr-2" />
+                Sign Out
+              </Button>
+            </div>
+          ) : (
+            <a href="/auth" className="flex items-center gap-2 text-black hover:text-primary transition-colors">
+              <User className="h-4 w-4" />
+              Sign In
+            </a>
+          )}
         </nav>
 
         <button onClick={() => setOpen(v => !v)} className="md:hidden bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-2 rounded-lg w-auto flex items-center justify-center transition-all duration-300 mr-4" aria-label="Toggle menu">
@@ -55,6 +73,24 @@ export default function Header() {
           <a onClick={() => setOpen(false)} href="/blog" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Blog</a>
           <a onClick={() => setOpen(false)} href="#quote" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Quote</a>
           <a onClick={() => setOpen(false)} href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-4 rounded-lg transition-colors font-semibold text-center block mt-4">Contact Us</a>
+          {user ? (
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                setOpen(false);
+                signOut();
+              }}
+              className="w-full mt-2"
+            >
+              <LogOut className="h-4 w-4 mr-2" />
+              Sign Out
+            </Button>
+          ) : (
+            <a onClick={() => setOpen(false)} href="/auth" className="flex items-center justify-center gap-2 py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium mt-2">
+              <User className="h-4 w-4" />
+              Sign In
+            </a>
+          )}
         </div>}
       </header>
     </>;
