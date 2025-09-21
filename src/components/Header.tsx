@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { LogOut, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/hooks/useAuth';
 import SkipLink from './SkipLink';
 import AnimatedLogo from './AnimatedLogo';
@@ -9,7 +10,17 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      navigate('/');
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
 
   // Determine if header should have white background (not on home page OR scrolled)
   const shouldHaveWhiteBackground = scrolled || location.pathname !== '/';
@@ -43,19 +54,33 @@ export default function Header() {
           <a href="/blog" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.pathname === '/blog' ? 'font-bold' : ''}`}>Blog</a>
           <a href="#quote" className={`text-black hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm px-2 py-1 ${location.hash === '#quote' ? 'font-bold' : ''}`}>Quote</a>
           <a href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring mr-8">Contact</a>
+          
           {user ? (
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Welcome!</span>
-              <Button variant="outline" size="sm" onClick={signOut}>
-                <LogOut className="h-4 w-4 mr-2" />
-                Sign Out
-              </Button>
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon" className="ml-2">
+                  <User className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem disabled>
+                  {user.email}
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleSignOut} className="text-red-600">
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Sign Out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           ) : (
-            <a href="/auth" className="flex items-center gap-2 text-black hover:text-primary transition-colors">
-              <User className="h-4 w-4" />
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/auth')}
+              className="ml-2"
+            >
               Sign In
-            </a>
+            </Button>
           )}
         </nav>
 
@@ -73,23 +98,28 @@ export default function Header() {
           <a onClick={() => setOpen(false)} href="/blog" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Blog</a>
           <a onClick={() => setOpen(false)} href="#quote" className="block py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium">Quote</a>
           <a onClick={() => setOpen(false)} href="#contact" className="bg-primary hover:bg-primary/90 text-primary-foreground py-3 px-4 rounded-lg transition-colors font-semibold text-center block mt-4">Contact Us</a>
+          
           {user ? (
-            <Button 
-              variant="outline" 
-              onClick={() => {
-                setOpen(false);
-                signOut();
-              }}
-              className="w-full mt-2"
-            >
-              <LogOut className="h-4 w-4 mr-2" />
-              Sign Out
-            </Button>
+            <>
+              <div className="block py-3 px-4 text-sm text-muted-foreground border-t mt-4">
+                {user.email}
+              </div>
+              <button 
+               onClick={() => { handleSignOut(); setOpen(false); }}
+                className="block w-full py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium text-left text-red-600"
+              >
+                <LogOut className="mr-2 h-4 w-4 inline" />
+                Sign Out
+              </button>
+            </>
           ) : (
-            <a onClick={() => setOpen(false)} href="/auth" className="flex items-center justify-center gap-2 py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium mt-2">
-              <User className="h-4 w-4" />
+            <button 
+               onClick={() => { navigate('/auth'); setOpen(false); }}
+              className="block w-full py-3 px-4 hover:bg-accent hover:text-accent-foreground rounded-lg transition-colors font-medium text-left mt-4 border-t"
+            >
+              <User className="mr-2 h-4 w-4 inline" />
               Sign In
-            </a>
+            </button>
           )}
         </div>}
       </header>
