@@ -134,7 +134,7 @@ export default function WaterBookingForm() {
 
   if (quoteSubmitted) {
     return (
-      <Card className="w-full max-w-2xl mx-auto">
+      <Card className="w-full max-w-2xl mx-auto border-2 border-primary rounded-md">
         <CardHeader className="text-center">
           <CardTitle className="text-green-600">Quote Request Submitted!</CardTitle>
           <CardDescription>
@@ -154,7 +154,7 @@ export default function WaterBookingForm() {
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="w-full max-w-2xl mx-auto border-2 border-primary rounded-md">
       <CardHeader>
         <CardTitle>Request Water Delivery Quote</CardTitle>
         <CardDescription>
