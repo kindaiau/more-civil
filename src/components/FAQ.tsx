@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { mountReveal } from '@/lib/motion';
 function QA({
   q,
   a
@@ -17,6 +18,10 @@ function QA({
     </div>;
 }
 export default function FAQ() {
+  useEffect(() => {
+    mountReveal();
+  }, []);
+
   return <section id="faq" className="py-32 bg-secondary/5">
       <div className="max-w-3xl mx-auto px-10 border-2 border-primary rounded-md bg-card p-8">
         <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground mb-8" style={{
