@@ -2,6 +2,18 @@
 
 MORECIVIL is a modern React web application for a South Australian water delivery and civil engineering company. Built with Vite, TypeScript, React, shadcn-ui, and Tailwind CSS, with Supabase backend integration.
 
+## Agent Briefing Protocol
+
+**ALWAYS, before starting any task:**
+
+1. **Read `docs/agent/BRIEF.md`** for the latest operator notes and constraints
+2. **Check the 5 most recent issues labeled "copilot"** for task-specific instructions  
+3. **Follow the Validation and Build requirements** already defined in this repository
+
+### Conflict Handling
+- If `docs/agent/BRIEF.md` conflicts with these main instructions, **prefer these main instructions** but **call out the discrepancy** in your PR description
+- Document what you chose and why for future reference
+
 **ALWAYS reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.**
 
 ## Working Effectively
