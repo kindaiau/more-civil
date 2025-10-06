@@ -4,9 +4,21 @@
 
 **URL**: https://lovable.dev/projects/99ce33f8-8800-4ec2-8b63-49c8b3732976
 
+## 🚀 Quick Start
+
+- **Working in Replit?** → See our [**Replit to GitHub Transfer Guide**](./REPLIT_TO_GITHUB_GUIDE.md)
+- **Local development?** → Run `npm install` then `npm run dev`
+- **Need to deploy?** → Check the [deployment section](#how-can-i-deploy-this-project)
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
+
+### 🔄 Transfer from Replit to GitHub
+
+If you've been developing in Replit and want to update this GitHub repository, see our comprehensive **[Replit to GitHub Transfer Guide](./REPLIT_TO_GITHUB_GUIDE.md)** for step-by-step instructions.
+
+### 💻 Development Options
 
 **Use Lovable**
 
@@ -24,13 +36,13 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/kindaiau/more-civil.git
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd more-civil
 
 # Step 3: Install the necessary dependencies.
-npm i
+npm install
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
@@ -49,6 +61,16 @@ npm run dev
 - Select the "Codespaces" tab.
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
+
+### 🧪 Testing Your Changes
+
+After making changes, always test:
+
+```sh
+npm run lint    # Check code quality
+npm run build   # Test production build
+npm run dev     # Start development server
+```
 
 ## What technologies are used for this project?
 
