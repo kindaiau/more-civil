@@ -6,8 +6,7 @@ interface AnimatedLogoProps {
 export default function AnimatedLogo({ className = "", scrolled = false }: AnimatedLogoProps) {
   return (
     <img
-      style={{ objectFit: 'cover', objectPosition: 'center' }}
-      src="/more-civil-animated-logo.gif"
+      src="/more-civil-transparent-logo.svg"
       alt="More Civil"
       className={`h-32 md:h-48 w-auto -ml-2 ${className} ${!scrolled ? 'drop-shadow-lg' : ''}`}
       width="605"
