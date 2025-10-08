@@ -72,7 +72,7 @@ const ServiceIntro = () => {
 
             {/* Video */}
             <div className="relative flex justify-center">
-              <video autoPlay loop muted playsInline className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video mx-0 px-[23px]">
+              <video autoPlay loop muted playsInline className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video mx-0 px-[21px] py-0 my-0">
                 <source src="/water-delivery-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
