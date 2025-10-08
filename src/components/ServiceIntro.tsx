@@ -73,7 +73,7 @@ const ServiceIntro = () => {
             {/* Video */}
             <div className="relative flex justify-center">
               <video 
-                className="w-full max-w-md rounded-xl shadow-lg" 
+                className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video" 
                 autoPlay 
                 loop 
                 muted 
