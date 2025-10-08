@@ -72,13 +72,7 @@ const ServiceIntro = () => {
 
             {/* Video */}
             <div className="relative flex justify-center">
-              <video 
-                className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-              >
+              <video autoPlay loop muted playsInline className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video mx-0 px-[23px]">
                 <source src="/water-delivery-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -88,7 +82,9 @@ const ServiceIntro = () => {
           {/* Right side - Content */}
           <div className="space-y-6 text-center">
             <div className="space-y-4">
-              <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground" style={{fontFamily: 'Montserrat'}}>
+              <h2 className="reveal font-extrabold text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-foreground" style={{
+              fontFamily: 'Montserrat'
+            }}>
                 Reliable Water Delivery & Civil Services
               </h2>
               
