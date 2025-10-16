@@ -14,6 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
+      auction_submissions: {
+        Row: {
+          admin_notes: string | null
+          artist: string
+          created_at: string
+          description: string | null
+          end_time: string
+          id: string
+          image_url: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          starting_bid: number
+          status: string
+          submitted_at: string
+          submitted_by: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          artist: string
+          created_at?: string
+          description?: string | null
+          end_time: string
+          id?: string
+          image_url?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          starting_bid: number
+          status?: string
+          submitted_at?: string
+          submitted_by?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          admin_notes?: string | null
+          artist?: string
+          created_at?: string
+          description?: string | null
+          end_time?: string
+          id?: string
+          image_url?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          starting_bid?: number
+          status?: string
+          submitted_at?: string
+          submitted_by?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      auctions: {
+        Row: {
+          artist: string
+          created_at: string
+          current_bid: number
+          description: string | null
+          end_time: string
+          id: string
+          image_url: string
+          starting_bid: number
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          artist: string
+          created_at?: string
+          current_bid: number
+          description?: string | null
+          end_time: string
+          id?: string
+          image_url: string
+          starting_bid: number
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          artist?: string
+          created_at?: string
+          current_bid?: number
+          description?: string | null
+          end_time?: string
+          id?: string
+          image_url?: string
+          starting_bid?: number
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       audit_logs: {
         Row: {
           created_at: string | null
@@ -50,203 +146,87 @@ export type Database = {
         }
         Relationships: []
       }
-      bank_transactions: {
+      bid_notifications: {
         Row: {
-          bank_account_id: string | null
-          contact_name: string | null
-          created_at: string
-          currency_code: string | null
-          date: string | null
+          bid_id: string | null
           id: string
-          line_items: Json | null
-          raw_data: Json | null
-          reference: string | null
-          status: string | null
-          total_amount: number | null
-          type: string | null
-          updated_at: string
-          user_id: string
-          xero_bank_transaction_id: string
+          notification_type: string
+          sent_at: string
+          status: string
         }
         Insert: {
-          bank_account_id?: string | null
-          contact_name?: string | null
-          created_at?: string
-          currency_code?: string | null
-          date?: string | null
+          bid_id?: string | null
           id?: string
-          line_items?: Json | null
-          raw_data?: Json | null
-          reference?: string | null
-          status?: string | null
-          total_amount?: number | null
-          type?: string | null
-          updated_at?: string
-          user_id: string
-          xero_bank_transaction_id: string
+          notification_type: string
+          sent_at?: string
+          status?: string
         }
         Update: {
-          bank_account_id?: string | null
-          contact_name?: string | null
-          created_at?: string
-          currency_code?: string | null
-          date?: string | null
+          bid_id?: string | null
           id?: string
-          line_items?: Json | null
-          raw_data?: Json | null
-          reference?: string | null
-          status?: string | null
-          total_amount?: number | null
-          type?: string | null
-          updated_at?: string
-          user_id?: string
-          xero_bank_transaction_id?: string
-        }
-        Relationships: []
-      }
-      booking_approvals: {
-        Row: {
-          approval_notes: string | null
-          approval_status: string
-          approved_at: string
-          approved_by: string
-          id: string
-          quote_id: string
-        }
-        Insert: {
-          approval_notes?: string | null
-          approval_status: string
-          approved_at?: string
-          approved_by: string
-          id?: string
-          quote_id: string
-        }
-        Update: {
-          approval_notes?: string | null
-          approval_status?: string
-          approved_at?: string
-          approved_by?: string
-          id?: string
-          quote_id?: string
+          notification_type?: string
+          sent_at?: string
+          status?: string
         }
         Relationships: [
           {
-            foreignKeyName: "booking_approvals_quote_id_fkey"
-            columns: ["quote_id"]
+            foreignKeyName: "bid_notifications_bid_id_fkey"
+            columns: ["bid_id"]
             isOneToOne: false
-            referencedRelation: "water_quotes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "booking_approvals_quote_id_fkey"
-            columns: ["quote_id"]
-            isOneToOne: false
-            referencedRelation: "water_quotes_secure"
+            referencedRelation: "bids"
             referencedColumns: ["id"]
           },
         ]
       }
-      cash_flow_analysis: {
+      bids: {
         Row: {
-          analysis_date: string
-          confidence_score: number | null
+          auction_id: string
+          bid_amount: number
+          bid_time: string
+          bidder_email: string
+          bidder_name: string
+          bidder_phone: string | null
           created_at: string
-          forecast_next_period: number | null
           id: string
-          net_cash_flow: number | null
-          period_type: string | null
-          reece_percentage: number | null
-          reece_spend: number | null
-          top_expense_category: string | null
-          total_expenses: number | null
-          total_income: number | null
-          user_id: string
+          maximum_bid_amount: number
+          status: string
+          submitted_bid_amount: number
         }
         Insert: {
-          analysis_date: string
-          confidence_score?: number | null
+          auction_id: string
+          bid_amount: number
+          bid_time?: string
+          bidder_email: string
+          bidder_name: string
+          bidder_phone?: string | null
           created_at?: string
-          forecast_next_period?: number | null
           id?: string
-          net_cash_flow?: number | null
-          period_type?: string | null
-          reece_percentage?: number | null
-          reece_spend?: number | null
-          top_expense_category?: string | null
-          total_expenses?: number | null
-          total_income?: number | null
-          user_id: string
+          maximum_bid_amount: number
+          status?: string
+          submitted_bid_amount: number
         }
         Update: {
-          analysis_date?: string
-          confidence_score?: number | null
+          auction_id?: string
+          bid_amount?: number
+          bid_time?: string
+          bidder_email?: string
+          bidder_name?: string
+          bidder_phone?: string | null
           created_at?: string
-          forecast_next_period?: number | null
           id?: string
-          net_cash_flow?: number | null
-          period_type?: string | null
-          reece_percentage?: number | null
-          reece_spend?: number | null
-          top_expense_category?: string | null
-          total_expenses?: number | null
-          total_income?: number | null
-          user_id?: string
+          maximum_bid_amount?: number
+          status?: string
+          submitted_bid_amount?: number
         }
-        Relationships: []
-      }
-      cash_flow_forecast: {
-        Row: {
-          admin_overhead: number | null
-          created_at: string
-          equipment_hire: number | null
-          expected_income: number | null
-          fuel: number | null
-          id: string
-          net_cash_flow: number | null
-          notes: string | null
-          payroll: number | null
-          reece_materials: number | null
-          subcontractor: number | null
-          total_expenses: number | null
-          updated_at: string
-          user_id: string
-          week_start: string
-        }
-        Insert: {
-          admin_overhead?: number | null
-          created_at?: string
-          equipment_hire?: number | null
-          expected_income?: number | null
-          fuel?: number | null
-          id?: string
-          net_cash_flow?: number | null
-          notes?: string | null
-          payroll?: number | null
-          reece_materials?: number | null
-          subcontractor?: number | null
-          total_expenses?: number | null
-          updated_at?: string
-          user_id: string
-          week_start: string
-        }
-        Update: {
-          admin_overhead?: number | null
-          created_at?: string
-          equipment_hire?: number | null
-          expected_income?: number | null
-          fuel?: number | null
-          id?: string
-          net_cash_flow?: number | null
-          notes?: string | null
-          payroll?: number | null
-          reece_materials?: number | null
-          subcontractor?: number | null
-          total_expenses?: number | null
-          updated_at?: string
-          user_id?: string
-          week_start?: string
-        }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "bids_auction_id_fkey"
+            columns: ["auction_id"]
+            isOneToOne: false
+            referencedRelation: "auctions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       contact_submissions: {
         Row: {
@@ -296,250 +276,30 @@ export type Database = {
         }
         Relationships: []
       }
-      google_sheets_connections: {
+      email_subscribers: {
         Row: {
-          created_at: string
-          error_message: string | null
+          email: string
           id: string
-          last_synced: string | null
-          name: string
-          sheet_id: string
-          sheet_url: string | null
-          sync_status: string | null
-          updated_at: string
-          user_id: string
+          name: string | null
+          phone: string | null
+          preferences: Json | null
+          subscribed_at: string
         }
         Insert: {
-          created_at?: string
-          error_message?: string | null
+          email: string
           id?: string
-          last_synced?: string | null
-          name: string
-          sheet_id: string
-          sheet_url?: string | null
-          sync_status?: string | null
-          updated_at?: string
-          user_id: string
+          name?: string | null
+          phone?: string | null
+          preferences?: Json | null
+          subscribed_at?: string
         }
         Update: {
-          created_at?: string
-          error_message?: string | null
+          email?: string
           id?: string
-          last_synced?: string | null
-          name?: string
-          sheet_id?: string
-          sheet_url?: string | null
-          sync_status?: string | null
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      invoice_line_items: {
-        Row: {
-          created_at: string
-          description: string | null
-          id: string
-          invoice_id: string | null
-          line_total: number | null
-          product_code: string | null
-          quantity: number | null
-          unit_price: number | null
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          description?: string | null
-          id?: string
-          invoice_id?: string | null
-          line_total?: number | null
-          product_code?: string | null
-          quantity?: number | null
-          unit_price?: number | null
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          description?: string | null
-          id?: string
-          invoice_id?: string | null
-          line_total?: number | null
-          product_code?: string | null
-          quantity?: number | null
-          unit_price?: number | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "invoice_line_items_invoice_id_fkey"
-            columns: ["invoice_id"]
-            isOneToOne: false
-            referencedRelation: "invoices"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      invoice_processing_log: {
-        Row: {
-          created_at: string | null
-          details: Json | null
-          error_message: string | null
-          id: string
-          invoice_id: string | null
-          processing_step: string
-          status: string
-          user_id: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          details?: Json | null
-          error_message?: string | null
-          id?: string
-          invoice_id?: string | null
-          processing_step: string
-          status: string
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          details?: Json | null
-          error_message?: string | null
-          id?: string
-          invoice_id?: string | null
-          processing_step?: string
-          status?: string
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "invoice_processing_log_invoice_id_fkey"
-            columns: ["invoice_id"]
-            isOneToOne: false
-            referencedRelation: "invoices"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      invoices: {
-        Row: {
-          category: string | null
-          created_at: string
-          id: string
-          invoice_date: string | null
-          invoice_number: string
-          job_id: string | null
-          job_number: string | null
-          matched_job_id: string | null
-          pdf_url: string | null
-          processing_status: string | null
-          raw_data: Json | null
-          supplier: string
-          total_amount: number | null
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          category?: string | null
-          created_at?: string
-          id?: string
-          invoice_date?: string | null
-          invoice_number: string
-          job_id?: string | null
-          job_number?: string | null
-          matched_job_id?: string | null
-          pdf_url?: string | null
-          processing_status?: string | null
-          raw_data?: Json | null
-          supplier?: string
-          total_amount?: number | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          category?: string | null
-          created_at?: string
-          id?: string
-          invoice_date?: string | null
-          invoice_number?: string
-          job_id?: string | null
-          job_number?: string | null
-          matched_job_id?: string | null
-          pdf_url?: string | null
-          processing_status?: string | null
-          raw_data?: Json | null
-          supplier?: string
-          total_amount?: number | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "invoices_job_id_fkey"
-            columns: ["job_id"]
-            isOneToOne: false
-            referencedRelation: "servicem8_jobs"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "invoices_matched_job_id_fkey"
-            columns: ["matched_job_id"]
-            isOneToOne: false
-            referencedRelation: "jobs"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      jobs: {
-        Row: {
-          actual_cost: number | null
-          client_name: string | null
-          completion_date: string | null
-          created_at: string
-          estimated_value: number | null
-          id: string
-          job_number: string
-          job_status: string | null
-          job_title: string | null
-          notes: string | null
-          profit_margin: number | null
-          start_date: string | null
-          technician: string | null
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          actual_cost?: number | null
-          client_name?: string | null
-          completion_date?: string | null
-          created_at?: string
-          estimated_value?: number | null
-          id?: string
-          job_number: string
-          job_status?: string | null
-          job_title?: string | null
-          notes?: string | null
-          profit_margin?: number | null
-          start_date?: string | null
-          technician?: string | null
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          actual_cost?: number | null
-          client_name?: string | null
-          completion_date?: string | null
-          created_at?: string
-          estimated_value?: number | null
-          id?: string
-          job_number?: string
-          job_status?: string | null
-          job_title?: string | null
-          notes?: string | null
-          profit_margin?: number | null
-          start_date?: string | null
-          technician?: string | null
-          updated_at?: string
-          user_id?: string
+          name?: string | null
+          phone?: string | null
+          preferences?: Json | null
+          subscribed_at?: string
         }
         Relationships: []
       }
@@ -549,6 +309,7 @@ export type Database = {
           email: string | null
           full_name: string | null
           id: string
+          phone: string | null
           updated_at: string
           user_id: string
         }
@@ -557,6 +318,7 @@ export type Database = {
           email?: string | null
           full_name?: string | null
           id?: string
+          phone?: string | null
           updated_at?: string
           user_id: string
         }
@@ -565,90 +327,7 @@ export type Database = {
           email?: string | null
           full_name?: string | null
           id?: string
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      servicem8_jobs: {
-        Row: {
-          created_at: string
-          created_date: string | null
-          customer_name: string | null
-          id: string
-          job_address: string | null
-          job_number: string
-          job_status: string | null
-          job_uuid: string | null
-          last_synced: string | null
-          raw_data: Json | null
-          total_value: number | null
-          user_id: string | null
-        }
-        Insert: {
-          created_at?: string
-          created_date?: string | null
-          customer_name?: string | null
-          id?: string
-          job_address?: string | null
-          job_number: string
-          job_status?: string | null
-          job_uuid?: string | null
-          last_synced?: string | null
-          raw_data?: Json | null
-          total_value?: number | null
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string
-          created_date?: string | null
-          customer_name?: string | null
-          id?: string
-          job_address?: string | null
-          job_number?: string
-          job_status?: string | null
-          job_uuid?: string | null
-          last_synced?: string | null
-          raw_data?: Json | null
-          total_value?: number | null
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      spend_summary: {
-        Row: {
-          category: string | null
-          created_at: string
-          id: string
-          invoice_count: number
-          month_year: string
-          percentage_of_total: number | null
-          supplier: string
-          total_amount: number
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          category?: string | null
-          created_at?: string
-          id?: string
-          invoice_count?: number
-          month_year: string
-          percentage_of_total?: number | null
-          supplier: string
-          total_amount?: number
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          category?: string | null
-          created_at?: string
-          id?: string
-          invoice_count?: number
-          month_year?: string
-          percentage_of_total?: number | null
-          supplier?: string
-          total_amount?: number
+          phone?: string | null
           updated_at?: string
           user_id?: string
         }
@@ -678,166 +357,23 @@ export type Database = {
         }
         Relationships: []
       }
-      water_bookings: {
+    }
+    Views: {
+      auction_bid_counts: {
         Row: {
-          booking_reference: string
-          confirmed_date: string
-          confirmed_price: number
-          created_at: string
-          delivery_notes: string | null
-          delivery_status: string
-          id: string
-          quote_id: string
-          updated_at: string
-        }
-        Insert: {
-          booking_reference: string
-          confirmed_date: string
-          confirmed_price: number
-          created_at?: string
-          delivery_notes?: string | null
-          delivery_status?: string
-          id?: string
-          quote_id: string
-          updated_at?: string
-        }
-        Update: {
-          booking_reference?: string
-          confirmed_date?: string
-          confirmed_price?: number
-          created_at?: string
-          delivery_notes?: string | null
-          delivery_status?: string
-          id?: string
-          quote_id?: string
-          updated_at?: string
+          auction_id: string | null
+          bid_count: number | null
+          current_high_bid: number | null
         }
         Relationships: [
           {
-            foreignKeyName: "water_bookings_quote_id_fkey"
-            columns: ["quote_id"]
+            foreignKeyName: "bids_auction_id_fkey"
+            columns: ["auction_id"]
             isOneToOne: false
-            referencedRelation: "water_quotes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "water_bookings_quote_id_fkey"
-            columns: ["quote_id"]
-            isOneToOne: false
-            referencedRelation: "water_quotes_secure"
+            referencedRelation: "auctions"
             referencedColumns: ["id"]
           },
         ]
-      }
-      water_quotes: {
-        Row: {
-          calculated_price: number
-          created_at: string
-          customer_email: string
-          customer_name: string
-          customer_phone: string
-          delivery_address: string
-          id: string
-          notes: string | null
-          preferred_date: string
-          price_breakdown: Json
-          quantity_kl: number
-          status: string
-          updated_at: string
-          water_type: string
-        }
-        Insert: {
-          calculated_price: number
-          created_at?: string
-          customer_email: string
-          customer_name: string
-          customer_phone: string
-          delivery_address: string
-          id?: string
-          notes?: string | null
-          preferred_date: string
-          price_breakdown: Json
-          quantity_kl: number
-          status?: string
-          updated_at?: string
-          water_type: string
-        }
-        Update: {
-          calculated_price?: number
-          created_at?: string
-          customer_email?: string
-          customer_name?: string
-          customer_phone?: string
-          delivery_address?: string
-          id?: string
-          notes?: string | null
-          preferred_date?: string
-          price_breakdown?: Json
-          quantity_kl?: number
-          status?: string
-          updated_at?: string
-          water_type?: string
-        }
-        Relationships: []
-      }
-    }
-    Views: {
-      water_quotes_secure: {
-        Row: {
-          calculated_price: number | null
-          created_at: string | null
-          customer_email: string | null
-          customer_email_masked: string | null
-          customer_name: string | null
-          customer_phone: string | null
-          customer_phone_masked: string | null
-          delivery_address: string | null
-          id: string | null
-          notes: string | null
-          preferred_date: string | null
-          price_breakdown: Json | null
-          quantity_kl: number | null
-          status: string | null
-          updated_at: string | null
-          water_type: string | null
-        }
-        Insert: {
-          calculated_price?: number | null
-          created_at?: string | null
-          customer_email?: string | null
-          customer_email_masked?: never
-          customer_name?: string | null
-          customer_phone?: string | null
-          customer_phone_masked?: never
-          delivery_address?: string | null
-          id?: string | null
-          notes?: string | null
-          preferred_date?: string | null
-          price_breakdown?: Json | null
-          quantity_kl?: number | null
-          status?: string | null
-          updated_at?: string | null
-          water_type?: string | null
-        }
-        Update: {
-          calculated_price?: number | null
-          created_at?: string | null
-          customer_email?: string | null
-          customer_email_masked?: never
-          customer_name?: string | null
-          customer_phone?: string | null
-          customer_phone_masked?: never
-          delivery_address?: string | null
-          id?: string | null
-          notes?: string | null
-          preferred_date?: string | null
-          price_breakdown?: Json | null
-          quantity_kl?: number | null
-          status?: string | null
-          updated_at?: string | null
-          water_type?: string | null
-        }
-        Relationships: []
       }
     }
     Functions: {
@@ -863,6 +399,17 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: string
       }
+      get_my_bids: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          auction_id: string
+          bid_amount: number
+          bid_time: string
+          id: string
+          status: string
+          submitted_bid_amount: number
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -877,10 +424,6 @@ export type Database = {
       is_current_user_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
-      }
-      refresh_job_cost_summary: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
       }
       verify_admin_with_audit: {
         Args: {

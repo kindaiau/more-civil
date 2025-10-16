@@ -18,7 +18,6 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Auth = lazy(() => import("./pages/Auth"));
 const ProjectDetail = lazy(() => import("./components/ProjectDetail"));
-const QuoteManagement = lazy(() => import("./components/QuoteManagement"));
 const ProtectedRoute = lazy(() => import("./components/ProtectedRoute"));
 
 const queryClient = new QueryClient();
@@ -46,11 +45,6 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/auth" element={<Auth />} />
-              <Route path="/management" element={
-                <ProtectedRoute requireAdmin={true}>
-                  <QuoteManagement />
-                </ProtectedRoute>
-              } />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
