@@ -12,9 +12,9 @@ const ServiceIntro = () => {
               <AnimatedLogo className="w-80" />
             </div>
 
-            {/* Video */}
+            {/* Video - lazy loaded to improve FCP */}
             <div className="relative flex justify-center">
-              <video autoPlay loop muted playsInline className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video mx-0 px-[21px] py-0 my-0">
+              <video autoPlay loop muted playsInline preload="none" className="w-full max-w-md rounded-xl shadow-lg object-cover aspect-video mx-0 px-[21px] py-0 my-0">
                 <source src="/water-delivery-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
