@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 type Review = {
   author_name: string
   profile_photo_url?: string
-  relative_time_description?: string
-  text: string
   rating: number
-  time?: number
+  text: string
+  time: number
+  original_url_to_review?: string
+  photo?: {
+    thumb: string
+    full: string
+  }
 }
 
 export default function ReviewsSection() {
@@ -14,15 +19,24 @@ export default function ReviewsSection() {
     rating?: number
     user_ratings_total?: number
     reviews: Review[]
-    placePhotoRef?: string | null
     error?: string
   }>({ reviews: [] })
 
   useEffect(() => {
-    fetch('/api/google-reviews')
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => setData({ reviews: [], error: 'fetch-failed' }))
+    // Use Supabase Edge Function for Google Reviews with proper authentication
+    supabase.functions.invoke('google-reviews')
+      .then((response) => {
+        if (response.data) {
+          setData(response.data);
+        } else if (response.error) {
+          console.error('Supabase function error:', response.error);
+          setData({ reviews: [], error: 'supabase-error' });
+        }
+      })
+      .catch((error) => {
+        console.error('Failed to fetch reviews:', error);
+        setData({ reviews: [], error: 'fetch-failed' });
+      });
   }, [])
 
   useEffect(() => {
@@ -63,10 +77,6 @@ export default function ReviewsSection() {
     }
   }, [data])
 
-  const placeImg = data.placePhotoRef
-    ? `/api/google-photo?ref=${encodeURIComponent(data.placePhotoRef)}&maxwidth=800`
-    : undefined
-
   return (
     <section className="py-16 bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 text-center">
@@ -83,14 +93,16 @@ export default function ReviewsSection() {
                 <div className="flex items-center gap-3">
                   {r.profile_photo_url ? (
                     <img src={r.profile_photo_url} alt={`${r.author_name} profile`} className="w-10 h-10 rounded-full object-cover" />
-                  ) : placeImg ? (
-                    <img src={placeImg} alt="More Civil project" className="w-10 h-10 rounded-full object-cover" />
+                  ) : r.photo?.thumb ? (
+                    <img src={r.photo.thumb} alt="More Civil project" className="w-10 h-10 rounded-full object-cover" />
                   ) : (
                     <div className="w-10 h-10 rounded-full bg-neutral-200" />
                   )}
                   <div>
                     <div className="text-sm font-medium">{r.author_name}</div>
-                    <div className="text-xs text-neutral-600">{r.relative_time_description || ''}</div>
+                    <div className="text-xs text-neutral-600">
+                      {new Date(r.time * 1000).toLocaleDateString('en-AU')}
+                    </div>
                   </div>
                 </div>
                 <div className="mt-3 text-amber-500" aria-label={`${r.rating} out of 5 stars`}>
