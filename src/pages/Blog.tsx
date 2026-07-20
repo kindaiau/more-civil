@@ -48,10 +48,10 @@ const Blog = () => {
       "mainEntity": [
         {
           "@type": "BlogPosting",
-          "headline": "Preparing Your Rainwater Tank for Spring: Insights from Adelaide Expert Shaun Reid",
+          "headline": "Preparing Your Rainwater Tank for Spring: Insights from Adelaide Expert Shaun More",
           "author": {
             "@type": "Person",
-            "name": "Shaun Reid",
+            "name": "Shaun More",
             "jobTitle": "General Manager",
             "worksFor": {
               "@type": "Organization",
@@ -88,10 +88,10 @@ const Blog = () => {
           <article className="space-y-4 max-w-3xl mx-auto">
             <h2>Building with Confidence: Insights from More Civil’s Director</h2>
             <p className="text-sm text-muted-foreground italic">
-              By Shaun Reid, Director of More Civil – May 16, 2024
+              By Shaun More, Director of More Civil – May 16, 2024
             </p>
             <p>
-              Welcome to the first post on the More Civil blog. I’m Shaun Reid, and after more than three decades in
+              Welcome to the first post on the More Civil blog. I’m Shaun More, and after more than three decades in
               South Australia’s earthmoving and construction scene, I’m proud to share our story and the knowledge
               we’ve gained along the way. Since founding More Civil in 2018, our goal has been simple: provide reliable
               earthmoving equipment hire and experienced operators who treat every project as if it were their own.
@@ -132,7 +132,7 @@ const Blog = () => {
           <article className="space-y-4 max-w-3xl mx-auto">
             <h2>Water Delivery Service South Australia: Your Complete Guide to Reliable Water Supply</h2>
             <p className="text-sm text-muted-foreground italic">
-              By Shaun Reid, Director of More Civil Water – September 13, 2025
+              By Shaun More, Director of More Civil Water – September 13, 2025
             </p>
             <p>
               When your project needs reliable water delivery in South Australia, choosing the right partner can make 
@@ -247,20 +247,20 @@ const Blog = () => {
 
           <article className="space-y-4 max-w-3xl mx-auto" itemScope itemType="https://schema.org/BlogPosting">
             <header>
-              <h2 itemProp="headline">Preparing Your Rainwater Tank for Spring: Insights from Adelaide Expert Shaun Reid</h2>
+              <h2 itemProp="headline">Preparing Your Rainwater Tank for Spring: Insights from Adelaide Expert Shaun More</h2>
               <p className="text-sm text-muted-foreground italic" itemProp="author" itemScope itemType="https://schema.org/Person">
-                By <span itemProp="name">Shaun Reid</span>, <span itemProp="jobTitle">General Manager at <span itemProp="worksFor" itemScope itemType="https://schema.org/Organization"><span itemProp="name">More Civil & Water</span></span></span> – <time itemProp="datePublished" dateTime="2025-09-21">September 21, 2025</time>
+                By <span itemProp="name">Shaun More</span>, <span itemProp="jobTitle">General Manager at <span itemProp="worksFor" itemScope itemType="https://schema.org/Organization"><span itemProp="name">More Civil & Water</span></span></span> – <time itemProp="datePublished" dateTime="2025-09-21">September 21, 2025</time>
               </p>
             </header>
             
             <section itemProp="articleBody">
               <p>
-                As the chill of winter fades and spring blossoms in Adelaide, it's the perfect time to turn our attention to one of the city's most valuable assets: rainwater tanks. With our Mediterranean climate bringing variable rainfall—often drier in spring—ensuring your tank is clean and ready can make all the difference in water quality, efficiency, and longevity. I'm drawing on the expertise of Shaun Reid, General Manager at <a href="/water" className="underline hover:text-[#00B4D8]">More Civil & Water</a>, Adelaide's go-to for reliable water delivery and civil services. Passionate about clean, safe water access, Shaun emphasizes proactive maintenance to avoid common pitfalls like contamination or system failures. Here's a comprehensive guide based on his local insights and best practices tailored to Adelaide's conditions.
+                As the chill of winter fades and spring blossoms in Adelaide, it's the perfect time to turn our attention to one of the city's most valuable assets: rainwater tanks. With our Mediterranean climate bringing variable rainfall—often drier in spring—ensuring your tank is clean and ready can make all the difference in water quality, efficiency, and longevity. I'm drawing on the expertise of Shaun More, General Manager at <a href="/water" className="underline hover:text-[#00B4D8]">More Civil & Water</a>, Adelaide's go-to for reliable water delivery and civil services. Passionate about clean, safe water access, Shaun emphasizes proactive maintenance to avoid common pitfalls like contamination or system failures. Here's a comprehensive guide based on his local insights and best practices tailored to Adelaide's conditions.
               </p>
 
               <h3>Why Clean Your Rainwater Tank? The Adelaide Perspective</h3>
               <p>
-                In Adelaide, where we rely heavily on harvested rainwater for gardens, laundry, and even drinking in some households, tank hygiene isn't just a chore—it's essential for health and sustainability. Shaun Reid points out that sediments, leaves, bird droppings, and even pollutants from urban air can accumulate over winter, leading to bacterial growth or blockages. According to health guidelines, unclean tanks can harbor pathogens like Salmonella, as seen in local studies on tank contamination. Regular cleaning prevents this, ensuring your water remains fresh as spring rains replenish supplies.
+                In Adelaide, where we rely heavily on harvested rainwater for gardens, laundry, and even drinking in some households, tank hygiene isn't just a chore—it's essential for health and sustainability. Shaun More points out that sediments, leaves, bird droppings, and even pollutants from urban air can accumulate over winter, leading to bacterial growth or blockages. According to health guidelines, unclean tanks can harbor pathogens like Salmonella, as seen in local studies on tank contamination. Regular cleaning prevents this, ensuring your water remains fresh as spring rains replenish supplies.
               </p>
               <p>
                 Shaun advises scheduling maintenance before the warmer months hit, when evaporation increases and demand spikes for irrigation. With projections of decreasing spring rainfall due to climate shifts, a well-prepped tank maximizes every drop, aligning with Adelaide's push for water-sensitive urban design.
@@ -312,7 +312,7 @@ const Blog = () => {
 
               <h3>Spring-Specific Preparations: Maximizing Efficiency in Adelaide</h3>
               <p>
-                Spring in Adelaide means transitioning from wet winters to drier, warmer days, so preparation focuses on conservation and quality. Shaun Reid highlights these key actions:
+                Spring in Adelaide means transitioning from wet winters to drier, warmer days, so preparation focuses on conservation and quality. Shaun More highlights these key actions:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Boost Filtration:</strong> Clean or replace inlet screens and filters. With pollen and dust picking up in spring, this prevents clogs and maintains flow.</li>
@@ -322,7 +322,7 @@ const Blog = () => {
                 <li><strong>Sustainable Upgrades:</strong> Consider adding solar pumps or smart monitors for efficiency, aligning with Adelaide's eco-friendly initiatives.</li>
               </ul>
 
-              <h3>Common Mistakes to Avoid, Per Shaun Reid</h3>
+              <h3>Common Mistakes to Avoid, Per Shaun More</h3>
               <p>
                 Shaun has seen it all in his years managing water services: Don't neglect gutters—clogged ones are the top cause of dirty tanks. Avoid over-chlorinating, which can harm beneficial bacteria in non-potable systems. And always prioritize safety—DIY is fine for small tanks, but pros handle the big jobs to prevent accidents.
               </p>
@@ -346,7 +346,7 @@ const Blog = () => {
             <footer>
               <h3>Final Thoughts</h3>
               <p>
-                By following these steps, your rainwater tank will be spring-ready, delivering clean, reliable water throughout Adelaide's variable seasons. As Shaun Reid aptly puts it, "Clean water starts with clean systems—invest a little time now for peace of mind all year." If you're unsure, consult local experts or services for tailored advice. Stay hydrated and sustainable, Adelaide! For more on water solutions, check out <a href="/water" className="underline hover:text-[#00B4D8]">More Civil & Water</a>.
+                By following these steps, your rainwater tank will be spring-ready, delivering clean, reliable water throughout Adelaide's variable seasons. As Shaun More aptly puts it, "Clean water starts with clean systems—invest a little time now for peace of mind all year." If you're unsure, consult local experts or services for tailored advice. Stay hydrated and sustainable, Adelaide! For more on water solutions, check out <a href="/water" className="underline hover:text-[#00B4D8]">More Civil & Water</a>.
               </p>
             </footer>
           </article>
